@@ -1,5 +1,5 @@
 // ==========================
-// 获取当前要加载的文件
+// 获取当前文件
 // ==========================
 function getCurrentFile() {
   const params = new URLSearchParams(window.location.search);
@@ -7,7 +7,7 @@ function getCurrentFile() {
 }
 
 // ==========================
-// 获取题目名称（用于标题）
+// 获取题目名
 // ==========================
 function getProblemName() {
   const parts = window.location.pathname.split("/");
@@ -24,33 +24,39 @@ function getProblemName() {
 // 修复 Markdown 内链接
 // ==========================
 function fixLinks(container) {
-  const links = container.querySelectorAll("a");
-
-  links.forEach(a => {
+  container.querySelectorAll("a").forEach(a => {
     let href = a.getAttribute("href");
     if (!href) return;
 
-    // 外链 / 锚点 / mail 不处理
     if (
       href.startsWith("http") ||
       href.startsWith("#") ||
       href.startsWith("mailto:")
     ) return;
 
-    // 去掉 "./"
     if (href.startsWith("./")) {
       href = href.slice(2);
     }
 
-    // 👉 关键：保持 .md 真实路径
-    if (href.endsWith(".md")) {
+    // 保持 /xxx.md 形式（触发 404 劫持）
+    if (href.match(/\.(md|cpp|txt|py|java|json)$/)) {
       a.href = href;
     }
   });
 }
 
 // ==========================
-// Markdown 渲染主流程
+// HTML 转义（防止代码被解析）
+// ==========================
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// ==========================
+// 主加载逻辑
 // ==========================
 async function load() {
   const file = getCurrentFile();
@@ -71,17 +77,37 @@ async function load() {
 
     const text = await res.text();
 
-    // 渲染 Markdown
-    contentEl.innerHTML = marked.parse(text);
+    // ======================
+    // Markdown
+    // ======================
+    if (file.endsWith(".md")) {
 
-    // 修复链接
-    fixLinks(contentEl);
+      contentEl.innerHTML = marked.parse(text);
 
-    // 代码高亮
-    if (window.hljs) {
-      document.querySelectorAll("pre code").forEach(block => {
-        hljs.highlightElement(block);
-      });
+      fixLinks(contentEl);
+
+      if (window.hljs) {
+        document.querySelectorAll("pre code").forEach(block => {
+          hljs.highlightElement(block);
+        });
+      }
+
+    }
+    // ======================
+    // 代码 / 文本文件
+    // ======================
+    else {
+
+      contentEl.innerHTML =
+        "<pre><code>" +
+        escapeHtml(text) +
+        "</code></pre>";
+
+      if (window.hljs) {
+        document.querySelectorAll("pre code").forEach(block => {
+          hljs.highlightElement(block);
+        });
+      }
     }
 
   } catch (err) {
