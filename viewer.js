@@ -1,41 +1,28 @@
-// 获取当前文件路径
+// ==========================
+// 获取当前要加载的文件
+// ==========================
 function getCurrentFile() {
-  let path = window.location.pathname;
-
-  // 去掉 repo 前缀（GitHub Pages 子路径）
-  // 例如 /code-saver/problems/P15142/sol.md
-  const base = "/code-saver/";
-  if (path.startsWith(base)) {
-    path = path.slice(base.length);
-  }
-
-  // 如果是目录（结尾 / 或 index.html）
-  if (path.endsWith("/") || path.endsWith("index.html")) {
-    return "index.md";
-  }
-
-  // 如果是 .md 文件
-  if (path.endsWith(".md")) {
-    return path.split("/").pop();
-  }
-
-  return "index.md";
+  const params = new URLSearchParams(window.location.search);
+  return params.get("file") || "index.md";
 }
 
-// 获取当前 problem 名
+// ==========================
+// 获取题目名称（用于标题）
+// ==========================
 function getProblemName() {
   const parts = window.location.pathname.split("/");
 
-  // 找到 problems 后面的目录名
   const idx = parts.indexOf("problems");
   if (idx !== -1 && parts.length > idx + 1) {
     return parts[idx + 1];
   }
 
-  return "Unknown";
+  return "Problem";
 }
 
-// 修复 Markdown 内的链接
+// ==========================
+// 修复 Markdown 内链接
+// ==========================
 function fixLinks(container) {
   const links = container.querySelectorAll("a");
 
@@ -43,53 +30,67 @@ function fixLinks(container) {
     let href = a.getAttribute("href");
     if (!href) return;
 
-    // 外链 / 锚点不处理
-    if (href.startsWith("http") || href.startsWith("#")) return;
+    // 外链 / 锚点 / mail 不处理
+    if (
+      href.startsWith("http") ||
+      href.startsWith("#") ||
+      href.startsWith("mailto:")
+    ) return;
 
-    // 去掉 ./
+    // 去掉 "./"
     if (href.startsWith("./")) {
       href = href.slice(2);
     }
 
-    // 👉 如果是 md 文件，改成真实路径跳转
+    // 👉 关键：保持 .md 真实路径
     if (href.endsWith(".md")) {
-      a.href = href; // 浏览器自动拼当前目录
+      a.href = href;
     }
   });
 }
 
-// 加载并渲染 Markdown
+// ==========================
+// Markdown 渲染主流程
+// ==========================
 async function load() {
   const file = getCurrentFile();
   const problem = getProblemName();
 
-  document.getElementById("title").textContent = problem;
+  const titleEl = document.getElementById("title");
+  const contentEl = document.getElementById("content");
+
+  if (titleEl) titleEl.textContent = problem;
 
   try {
-    const res = await fetch(file);
+    const res = await fetch("raw/" + file);
+
     if (!res.ok) {
-      document.getElementById("content").innerHTML = "<p>❌ File not found</p>";
+      contentEl.innerHTML = "<h2>❌ File not found</h2>";
       return;
     }
 
     const text = await res.text();
 
-    const container = document.getElementById("content");
-    container.innerHTML = marked.parse(text);
+    // 渲染 Markdown
+    contentEl.innerHTML = marked.parse(text);
 
-    fixLinks(container);
+    // 修复链接
+    fixLinks(contentEl);
 
-    // 可选：代码高亮
+    // 代码高亮
     if (window.hljs) {
       document.querySelectorAll("pre code").forEach(block => {
         hljs.highlightElement(block);
       });
     }
 
-  } catch (e) {
-    document.getElementById("content").innerHTML = "<p>❌ Load failed</p>";
-    console.error(e);
+  } catch (err) {
+    contentEl.innerHTML = "<h2>❌ Load failed</h2>";
+    console.error(err);
   }
 }
 
+// ==========================
+// 启动
+// ==========================
 load();
