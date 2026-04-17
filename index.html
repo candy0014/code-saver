@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Code Archive</title>
+  <title>Problems</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,7 +11,29 @@
 <h1>📚 Problem List</h1>
 <ul id="list"></ul>
 
-<script src="script.js"></script>
+<script>
+const user = "candy0014";
+const repo = "code-saver";
+
+fetch(`https://api.github.com/repos/${user}/${repo}/contents/problems`)
+  .then(r => r.json())
+  .then(data => {
+    const list = document.getElementById("list");
+
+    data.forEach(item => {
+      if (item.type === "dir") {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+
+        a.href = `problems/${item.name}/`;
+        a.textContent = item.name;
+
+        li.appendChild(a);
+        list.appendChild(li);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
