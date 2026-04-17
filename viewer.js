@@ -38,7 +38,7 @@ function fixLinks(container) {
       href = href.slice(2);
     }
 
-    // 保持 /xxx.md 形式（触发 404 劫持）
+    // 保持 /xxx.md / xxx.cpp 形式（触发 404）
     if (href.match(/\.(md|cpp|txt|py|java|json)$/)) {
       a.href = href;
     }
@@ -56,10 +56,18 @@ function escapeHtml(str) {
 }
 
 // ==========================
+// 根据扩展名判断类型
+// ==========================
+function getExt(file) {
+  return file.split(".").pop().toLowerCase().trim();
+}
+
+// ==========================
 // 主加载逻辑
 // ==========================
 async function load() {
-  const file = getCurrentFile();
+  const file = getCurrentFile().trim();
+  const ext = getExt(file);
   const problem = getProblemName();
 
   const titleEl = document.getElementById("title");
@@ -78,11 +86,16 @@ async function load() {
     const text = await res.text();
 
     // ======================
-    // Markdown
+    // Markdown 文件
     // ======================
-    if (file.endsWith(".md")) {
+    if (ext === "md") {
 
-      contentEl.innerHTML = marked.parse(text);
+      // ⚠️ 防止 HTML 被当标签解析（关键）
+      const safeText = text
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      contentEl.innerHTML = marked.parse(safeText);
 
       fixLinks(contentEl);
 
