@@ -10,38 +10,13 @@ function getParams() {
 }
 
 // ==========================
-// HTML 转义（防止代码被解析）
+// HTML 转义
 // ==========================
 function escapeHtml(str) {
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-}
-
-// ==========================
-// 修复 Markdown 内链接
-// ==========================
-function fixLinks(container, problem) {
-  container.querySelectorAll("a").forEach(a => {
-    let href = a.getAttribute("href");
-    if (!href) return;
-
-    if (
-      href.startsWith("http") ||
-      href.startsWith("#") ||
-      href.startsWith("mailto:")
-    ) return;
-
-    if (href.startsWith("./")) {
-      href = href.slice(2);
-    }
-
-    if (href.match(/\.(md|cpp|txt|py)$/)) {
-      const name = href.split(".")[0];
-      a.href = "/code-saver/" + problem + "/" + name;
-    }
-  });
 }
 
 // ==========================
@@ -60,8 +35,15 @@ async function load() {
 
   const titleEl = document.getElementById("title");
   const contentEl = document.getElementById("content");
+  const baseEl = document.getElementById("base");
 
+  // 设置标题
   if (titleEl) titleEl.textContent = problem;
+
+  // ==========================
+  // ✅ 设置 base（核心）
+  // ==========================
+  baseEl.href = "/code-saver/" + problem + "/";
 
   try {
     const res = await fetch(
@@ -85,15 +67,11 @@ async function load() {
         .replace(/>/g, "&gt;");
 
       contentEl.innerHTML = marked.parse(safeText);
-
-      fixLinks(contentEl, problem);
-
     }
     // ======================
     // 代码
     // ======================
     else {
-
       contentEl.innerHTML =
         "<pre><code>" +
         escapeHtml(text) +

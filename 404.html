@@ -7,20 +7,28 @@
     (function() {
       const repo = "code-saver";
 
-      const path = location.pathname;
-      const parts = path.split("/").filter(x => x);
+      let path = location.pathname;
 
       // 去掉仓库名
-      if (parts[0] === repo) parts.shift();
+      path = path.replace("/" + repo, "");
+
+      const parts = path.split("/").filter(x => x);
 
       const problem = parts[0] || "";
-      const page = parts[1] || "index";
-
       let file = "index.md";
 
-      if (page === "index") file = "index.md";
-      else if (page === "sol") file = "sol.md";
-      else if (page.startsWith("code")) file = page + ".cpp";
+      if (parts.length >= 2) {
+        let p = parts.slice(1).join("/");
+
+        // 如果没有扩展名，自动补
+        if (!p.includes(".")) {
+          if (p === "sol") p = "sol.md";
+          else if (p.startsWith("code")) p += ".cpp";
+          else p += ".md";
+        }
+
+        file = p;
+      }
 
       location.replace(
         "/" + repo +

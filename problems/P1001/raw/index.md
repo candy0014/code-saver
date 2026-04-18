@@ -24,4 +24,4 @@
 - **2026-04-17 15:12:** QOJ15715 [submission](https://qoj.ac/submission/2242659)
 - **2026-04-17 15:10:** CF2157I [submission](https://codeforces.com/contest/2157/submission/371464545)
 
-[1](../P1001)
+[1]()
