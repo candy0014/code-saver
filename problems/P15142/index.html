@@ -2,25 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <script>
+    const repo = "code-saver";
 
-  <!-- Markdown -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    const parts = location.pathname.split("/").filter(x => x);
+    const idx = parts.indexOf("problems");
+    const problem = parts[idx + 1];
 
-  <!-- 可选：代码高亮 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/github-dark.css">
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/common.min.js"></script>
+    // 支持 ?file=xxx
+    const params = new URLSearchParams(location.search);
+    const file = params.get("file") || "index.md";
 
-  <link rel="stylesheet" href="../../style.css">
+    location.replace(
+      "/" + repo +
+      "/viewer.html?problem=" + problem +
+      "&file=" + file
+    );
+  </script>
 </head>
-
-<body>
-
-<a href="../..">← Back</a>
-
-<h1 id="title"></h1>
-<div id="content"></div>
-
-<script src="../../viewer.js"></script>
-
-</body>
+<body></body>
 </html>

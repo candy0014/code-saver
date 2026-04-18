@@ -14,9 +14,9 @@
 	- [CF2157I](https://codeforces.com/problemset/problem/2157/I)
 	- [QOJ15715](https://qoj.ac/problem/15715)
 - **Code**
-	- [code0](code0.cpp)
+	- [code0](?file=code0.cpp)
 - **Solution**
-	- [sol](sol.md)
+	- [sol](?file=sol.md)
 
 ## Submission
 

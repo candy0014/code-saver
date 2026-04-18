@@ -3,10 +3,20 @@
 // ==========================
 function getParams() {
   const p = new URLSearchParams(location.search);
-  return {
-    problem: p.get("problem") || "",
-    file: p.get("file") || "index.md"
-  };
+
+  let problem = p.get("problem");
+  let file = p.get("file") || "index.md";
+
+  // 👇 如果没有 problem，从路径解析
+  if (!problem) {
+    const parts = location.pathname.split("/").filter(x => x);
+    const idx = parts.indexOf("problems");
+    if (idx !== -1 && parts.length > idx + 1) {
+      problem = parts[idx + 1];
+    }
+  }
+
+  return { problem, file };
 }
 
 // ==========================
@@ -37,17 +47,14 @@ async function load() {
   const contentEl = document.getElementById("content");
   const baseEl = document.getElementById("base");
 
-  // 设置标题
   if (titleEl) titleEl.textContent = problem;
 
-  // ==========================
-  // ✅ 设置 base（核心）
-  // ==========================
-  baseEl.href = "/code-saver/" + problem + "/";
+  // ✅ 关键：设置 base 为当前目录
+  baseEl.href = location.pathname.replace(/\/[^/]*$/, "/");
 
   try {
     const res = await fetch(
-      "problems/" + problem + "/raw/" + file
+      "/code-saver/problems/" + problem + "/raw/" + file
     );
 
     if (!res.ok) {
