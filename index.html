@@ -2,38 +2,19 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Problems</title>
+  <title>Code-Saver</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>📚 Problem List</h1>
-<ul id="list"></ul>
+<h1>Code-Saver</h1>
 
-<script>
-const user = "candy0014";
-const repo = "code-saver";
-
-fetch(`https://api.github.com/repos/${user}/${repo}/contents/problems`)
-  .then(r => r.json())
-  .then(data => {
-    const list = document.getElementById("list");
-
-    data.forEach(item => {
-      if (item.type === "dir") {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-
-        a.href = `problems/${item.name}/`;
-        a.textContent = item.name;
-
-        li.appendChild(a);
-        list.appendChild(li);
-      }
-    });
-  });
-</script>
+<ul>
+  <li>
+    <a href="problems/">Problems</a>
+  </li>
+</ul>
 
 </body>
 </html>

@@ -25,3 +25,5 @@
 - **2026-04-17 15:10:** CF2157I [submission](https://codeforces.com/contest/2157/submission/371464545)
 
 [1](../P1001)
+
+[2](../P1001/?file=sol.md)

@@ -1,23 +1,28 @@
 // ==========================
-// 获取参数（从路径解析）
+// 参数解析
 // ==========================
 function getParams() {
-  const parts = location.pathname.split("/").filter(x => x);
-  const idx = parts.indexOf("problems");
+  const p = new URLSearchParams(location.search);
 
-  let problem = null;
-  if (idx !== -1 && parts.length > idx + 1) {
-    problem = parts[idx + 1];
+  const file = p.get("file") || "index.md";
+
+  // 去掉空段
+  let parts = location.pathname.split("/").filter(x => x);
+
+  // 如果最后是 html（viewer.html），去掉它
+  const last = parts[parts.length - 1];
+  if (last && last.includes(".html")) {
+    parts.pop();
   }
 
-  const p = new URLSearchParams(location.search);
-  let file = p.get("file") || "index.md";
+  // basePath = /code-saver/problems/P1001
+  const basePath = "/" + parts.join("/");
 
-  return { problem, file };
+  return { basePath, file };
 }
 
 // ==========================
-// HTML 转义（用于代码）
+// HTML 转义
 // ==========================
 function escapeHtml(str) {
   return str
@@ -27,17 +32,18 @@ function escapeHtml(str) {
 }
 
 // ==========================
-// 获取扩展名
+// 扩展名
 // ==========================
 function getExt(file) {
-  return file.split(".").pop().toLowerCase().trim();
+  const i = file.lastIndexOf(".");
+  return i === -1 ? "" : file.slice(i + 1).toLowerCase();
 }
 
 // ==========================
 // 主逻辑
 // ==========================
 async function load() {
-  const { problem, file } = getParams();
+  const { basePath, file } = getParams();
   const ext = getExt(file);
 
   const titleEl = document.getElementById("title");
@@ -45,31 +51,49 @@ async function load() {
   const baseEl = document.getElementById("base");
   const backEl = document.getElementById("back");
 
-  console.log("Problem:", problem);
-  console.log("File:", file);
+  console.log("basePath:", basePath);
+  console.log("file:", file);
 
-  if (titleEl) titleEl.textContent = problem;
-
-  // ==========================
-  // 自动适配 base（关键）
-  // ==========================
-  const basePath = location.pathname.includes("/code-saver/")
-    ? "/code-saver/"
-    : "/";
-
-  if (baseEl) {
-    baseEl.href = location.pathname.replace(/\/[^/]*$/, "/");
+  if (!basePath) {
+    contentEl.innerHTML = "<h2>❌ Invalid path</h2>";
+    return;
   }
 
+  // 标题
+  if (titleEl) {
+    titleEl.textContent = basePath.split("/").pop();
+  }
+
+  // base link
+  if (baseEl) {
+    baseEl.href = basePath + "/";
+  }
+
+  // ==========================
+  // back 逻辑（核心）
+  // ==========================
   if (backEl) {
-    backEl.href = basePath;
+    const params = new URLSearchParams(location.search);
+    const hasFile = params.has("file");
+
+    if (hasFile) {
+      // 👉 只看文件：回到目录页（去掉 query）
+      backEl.href = basePath + "/";
+    } else {
+      // 👉 目录页：回上一级
+      const parts = basePath.split("/").filter(x => x);
+      const parent = parts.slice(0, -1).join("/");
+      backEl.href = "/" + parent + "/";
+    }
   }
 
   try {
-    const url =
-      basePath + "problems/" + problem + "/raw/" + file;
+    // ==========================
+    // 拼接 raw 路径
+    // ==========================
+    const url = basePath + "/raw/" + file;
 
-    console.log("Fetching:", url);
+    console.log("fetch:", url);
 
     const res = await fetch(url);
 
@@ -79,30 +103,25 @@ async function load() {
     }
 
     const text = await res.text();
-    console.log("Loaded length:", text.length);
 
     if (!text.trim()) {
       contentEl.innerHTML = "<h2>⚠️ Empty file</h2>";
       return;
     }
 
-    // ======================
-    // Markdown 渲染
-    // ======================
+    // ==========================
+    // 渲染
+    // ==========================
     if (ext === "md") {
       contentEl.innerHTML = marked.parse(text);
-    }
-    // ======================
-    // 代码文件
-    // ======================
-    else {
+    } else {
       contentEl.innerHTML =
-        "<pre><code>" +
-        escapeHtml(text) +
-        "</code></pre>";
+        "<pre><code>" + escapeHtml(text) + "</code></pre>";
     }
 
+    // ==========================
     // 高亮
+    // ==========================
     if (window.hljs) {
       document.querySelectorAll("pre code").forEach(block => {
         hljs.highlightElement(block);
