@@ -1,0 +1,22 @@
+{
+  "name": "code-saver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "gen": "node generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candy0014/code-saver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/candy0014/code-saver/issues"
+  },
+  "homepage": "https://github.com/candy0014/code-saver#readme"
+}

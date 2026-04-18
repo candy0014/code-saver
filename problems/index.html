@@ -31,22 +31,21 @@
 const user = "candy0014";
 const repo = "code-saver";
 
-fetch(`https://api.github.com/repos/${user}/${repo}/contents/problems`)
+fetch("index.json")
   .then(r => r.json())
   .then(data => {
     const list = document.getElementById("list");
+    list.innerHTML = ""; // 清空旧内容
 
-    data.forEach(item => {
-      if (item.type === "dir") {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
+    data.forEach(name => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
 
-        a.href = `/code-saver/problems/${item.name}/`;
-        a.textContent = item.name;
+      a.href = `/code-saver/problems/${name}/`;
+      a.textContent = name;
 
-        li.appendChild(a);
-        list.appendChild(li);
-      }
+      li.appendChild(a);
+      list.appendChild(li);
     });
   })
   .catch(err => {
