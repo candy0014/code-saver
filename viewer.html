@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title id="title">Loading...</title>
 
-  <!-- ✅ 关键：相对路径基准 -->
+  <!-- ✅ 必须在最前 -->
   <base id="base">
+
+  <title id="title">Loading...</title>
 
   <!-- Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -24,6 +25,7 @@
 
   <div id="content"></div>
 
+  <!-- ✅ JS 放最后，确保 DOM 存在 -->
   <script src="viewer.js"></script>
 </body>
 </html>

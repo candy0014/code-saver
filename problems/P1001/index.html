@@ -2,23 +2,30 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <script>
-    const repo = "code-saver";
 
-    const parts = location.pathname.split("/").filter(x => x);
-    const idx = parts.indexOf("problems");
-    const problem = parts[idx + 1];
+  <!-- 相对路径基准 -->
+  <base id="base">
 
-    // 支持 ?file=xxx
-    const params = new URLSearchParams(location.search);
-    const file = params.get("file") || "index.md";
+  <title id="title">Loading...</title>
 
-    location.replace(
-      "/" + repo +
-      "/viewer.html?problem=" + problem +
-      "&file=" + file
-    );
-  </script>
+  <!-- Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- 高亮 -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/highlight.js/styles/github-dark.css">
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/highlight.js"></script>
+
+  <link rel="stylesheet" href="/code-saver/style.css">
 </head>
-<body></body>
+<body>
+
+  <h1 id="title"></h1>
+  <a id="back">← Back</a>
+
+  <div id="content"></div>
+
+  <!-- 直接使用通用 viewer -->
+  <script src="/code-saver/viewer.js"></script>
+</body>
 </html>

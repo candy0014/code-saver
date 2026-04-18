@@ -1,26 +1,23 @@
 // ==========================
-// 获取参数
+// 获取参数（从路径解析）
 // ==========================
 function getParams() {
-  const p = new URLSearchParams(location.search);
+  const parts = location.pathname.split("/").filter(x => x);
+  const idx = parts.indexOf("problems");
 
-  let problem = p.get("problem");
-  let file = p.get("file") || "index.md";
-
-  // 👇 如果没有 problem，从路径解析
-  if (!problem) {
-    const parts = location.pathname.split("/").filter(x => x);
-    const idx = parts.indexOf("problems");
-    if (idx !== -1 && parts.length > idx + 1) {
-      problem = parts[idx + 1];
-    }
+  let problem = null;
+  if (idx !== -1 && parts.length > idx + 1) {
+    problem = parts[idx + 1];
   }
+
+  const p = new URLSearchParams(location.search);
+  let file = p.get("file") || "index.md";
 
   return { problem, file };
 }
 
 // ==========================
-// HTML 转义
+// HTML 转义（用于代码）
 // ==========================
 function escapeHtml(str) {
   return str
@@ -46,16 +43,35 @@ async function load() {
   const titleEl = document.getElementById("title");
   const contentEl = document.getElementById("content");
   const baseEl = document.getElementById("base");
+  const backEl = document.getElementById("back");
+
+  console.log("Problem:", problem);
+  console.log("File:", file);
 
   if (titleEl) titleEl.textContent = problem;
 
-  // ✅ 关键：设置 base 为当前目录
-  baseEl.href = location.pathname.replace(/\/[^/]*$/, "/");
+  // ==========================
+  // 自动适配 base（关键）
+  // ==========================
+  const basePath = location.pathname.includes("/code-saver/")
+    ? "/code-saver/"
+    : "/";
+
+  if (baseEl) {
+    baseEl.href = location.pathname.replace(/\/[^/]*$/, "/");
+  }
+
+  if (backEl) {
+    backEl.href = basePath;
+  }
 
   try {
-    const res = await fetch(
-      "/code-saver/problems/" + problem + "/raw/" + file
-    );
+    const url =
+      basePath + "problems/" + problem + "/raw/" + file;
+
+    console.log("Fetching:", url);
+
+    const res = await fetch(url);
 
     if (!res.ok) {
       contentEl.innerHTML = "<h2>❌ File not found</h2>";
@@ -63,20 +79,21 @@ async function load() {
     }
 
     const text = await res.text();
+    console.log("Loaded length:", text.length);
+
+    if (!text.trim()) {
+      contentEl.innerHTML = "<h2>⚠️ Empty file</h2>";
+      return;
+    }
 
     // ======================
-    // Markdown
+    // Markdown 渲染
     // ======================
     if (ext === "md") {
-
-      const safeText = text
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-
-      contentEl.innerHTML = marked.parse(safeText);
+      contentEl.innerHTML = marked.parse(text);
     }
     // ======================
-    // 代码
+    // 代码文件
     // ======================
     else {
       contentEl.innerHTML =
@@ -93,8 +110,8 @@ async function load() {
     }
 
   } catch (err) {
-    contentEl.innerHTML = "<h2>❌ Load failed</h2>";
     console.error(err);
+    contentEl.innerHTML = "<h2>❌ Load failed</h2>";
   }
 }
 
