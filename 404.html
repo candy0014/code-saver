@@ -2,26 +2,33 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>Loading...</title>
   <script>
-    (function () {
-      const path = window.location.pathname;
+    (function() {
+      const repo = "code-saver";
 
-      // 匹配需要接管的文件类型
-      if (path.match(/\.(md|cpp|txt|py|java|json)$/)) {
+      const path = location.pathname;
+      const parts = path.split("/").filter(x => x);
 
-        const parts = path.split("/");
-        const file = parts.pop();        // 文件名
-        const dir = parts.join("/");     // 目录
+      // 去掉仓库名
+      if (parts[0] === repo) parts.shift();
 
-        // 跳转到目录 index.html，并带参数
-        window.location.replace(
-          dir + "/?file=" + encodeURIComponent(file)
-        );
-      }
+      const problem = parts[0] || "";
+      const page = parts[1] || "index";
+
+      let file = "index.md";
+
+      if (page === "index") file = "index.md";
+      else if (page === "sol") file = "sol.md";
+      else if (page.startsWith("code")) file = page + ".cpp";
+
+      location.replace(
+        "/" + repo +
+        "/viewer.html?problem=" + problem +
+        "&file=" + file
+      );
     })();
   </script>
 </head>
-<body>
-Redirecting...
-</body>
+<body></body>
 </html>
