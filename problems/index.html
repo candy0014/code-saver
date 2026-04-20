@@ -274,7 +274,7 @@ function filterData() {
     if (maxDiff !== null && d > maxDiff) return false;
 
     if (searchText) {
-      if (!item.problems?.some(p => p.toLowerCase().includes(searchText)))
+      if (!item.search?.some(p => p.toLowerCase().includes(searchText)))
         return false;
     }
 
@@ -318,7 +318,7 @@ function render() {
       a.textContent = item.name;
       td.appendChild(a);
 
-      if (item.problems?.length > 1) {
+      {
         const sub = document.createElement("div");
         sub.style.fontSize = "12px";
         sub.style.opacity = "0.7";
@@ -345,8 +345,94 @@ function render() {
       tr.append(td, td2, td3, td4);
       list.appendChild(tr);
     });
-
+  renderPagination();
   updateURL();
+}
+
+// ==========================
+// 分页
+// ==========================
+function renderPagination() {
+  const totalPages = Math.ceil(data.length / pageSize);
+  const container = document.getElementById("pagination");
+  container.innerHTML = "";
+
+  const info = document.createElement("span");
+  info.textContent = `第 ${currentPage} / ${totalPages} 页 `;
+  container.appendChild(info);
+
+  const first = document.createElement("button");
+  first.textContent = "««";
+  first.disabled = currentPage === 1;
+  first.onclick = () => { currentPage = 1; render(); };
+  container.appendChild(first);
+
+  const prev = document.createElement("button");
+  prev.textContent = "«";
+  prev.disabled = currentPage === 1;
+  prev.onclick = () => { currentPage--; render(); };
+  container.appendChild(prev);
+
+  let left = currentPage - 2;
+  let right = currentPage + 2;
+
+  if (left < 1) {
+    right += (1 - left);
+    left = 1;
+  }
+
+  if (right > totalPages) {
+    left -= (right - totalPages);
+    right = totalPages;
+  }
+
+  if (left < 1) left = 1;
+
+  for (let i = left; i <= right; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+
+    if (i === currentPage) {
+      btn.classList.add("active-page");
+      btn.disabled = true;
+    }
+
+    btn.onclick = () => {
+      currentPage = i;
+      render();
+    };
+
+    container.appendChild(btn);
+  }
+
+  const next = document.createElement("button");
+  next.textContent = "»";
+  next.disabled = currentPage === totalPages;
+  next.onclick = () => { currentPage++; render(); };
+  container.appendChild(next);
+
+  const last = document.createElement("button");
+  last.textContent = "»»";
+  last.disabled = currentPage === totalPages;
+  last.onclick = () => { currentPage = totalPages; render(); };
+  container.appendChild(last);
+}
+
+// ==========================
+// 跳页
+// ==========================
+function jumpPage() {
+  const input = document.getElementById("jumpInput");
+  const totalPages = Math.ceil(data.length / pageSize);
+
+  let page = parseInt(input.value);
+  if (isNaN(page)) return;
+
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+
+  currentPage = page;
+  render();
 }
 
 // ==========================

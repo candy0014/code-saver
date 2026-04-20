@@ -38,6 +38,9 @@ struct Problem{
 				if(str=="QOJ"){
 					y="https://qoj.ac/problem/"+substr(x,3);
 				}
+				if(str=="LOJ"){
+					y="https://loj.ac/p/"+substr(x,3);
+				}
 			}
 			if(y=="null") y="";
 			p.push_back(make_pair(x,y));
@@ -168,6 +171,17 @@ struct Problem{
 					flag=1;
 					out<<"\""<<y.first<<"\"";
 				}
+			}
+		}
+		out<<"],\n";
+		out<<"\"search\": [";
+		flag=0;
+		for(auto x:link){
+			if(x.name=="Code"||x.name=="Solution") continue;
+			for(auto y:x.p){
+				if(flag) out<<",";
+				flag=1;
+				out<<"\""<<y.first<<"\"";
 			}
 		}
 		out<<"],\n";
