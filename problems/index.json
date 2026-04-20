@@ -182,5 +182,13 @@
 "difficulty": 3500,
 "time": "2026-04-09 09:00:25",
 "tags": ["线性基","ad-hoc"]
+},
+{
+"name": "CF2158F2",
+"problems": ["CF2158F2"],
+"search": ["CF2158F2","CF2158F1"],
+"difficulty": 3000,
+"time": "2026-04-20 21:18:54",
+"tags": ["构造"]
 }
 ]
