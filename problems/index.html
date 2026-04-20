@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Problems</title>
-  <link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<title>Problems</title>
+<link rel="stylesheet" href="../style.css">
 
-  <style>
-    .nav { margin-bottom: 15px; }
-    .nav a { margin-right: 12px; }
+<style>
+.nav { margin-bottom: 15px; }
+.nav a { margin-right: 12px; }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 10px;
-    }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
 
-    th, td {
-      border: 1px solid #30363d;
-      padding: 8px 12px;
-      text-align: left;
-    }
+th, td {
+  border: 1px solid #30363d;
+  padding: 8px 12px;
+  text-align: left;
+}
 
-    th { background: #161b22; }
+th { background: #161b22; }
+tr:hover { background: #1f2630; }
 
-    tr:hover { background: #1f2630; }
+.tag {
+  display: inline-block;
+  background: #30363d;
+  padding: 2px 6px;
+  margin-right: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
 
-    .tag {
-      display: inline-block;
-      background: #30363d;
-      padding: 2px 6px;
-      margin-right: 4px;
-      border-radius: 4px;
-      font-size: 12px;
-    }
+.tag.active {
+  background: #1f6feb;
+  color: white;
+}
 
-    .pagination { margin-top: 10px; }
+.pagination { margin-top: 10px; }
+.jump { margin-top: 10px; }
+.filter { margin-top: 10px; }
 
-    .jump { margin-top: 10px; }
+.sort-btn {
+  cursor: pointer;
+  margin-left: 5px;
+}
 
-    .sort-btn {
-      cursor: pointer;
-      margin-left: 5px;
-    }
+.active-page {
+  background: #1f6feb;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #388bfd;
+}
 
-    .active-page {
-      background: #1f6feb;
-      color: white;
-      font-weight: bold;
-      border: 1px solid #388bfd;
-    }
-  </style>
+.tag-filter {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.tag-select {
+  margin-top: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.tag-dropdown {
+  display: none;
+  position: absolute;
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 10px;
+  width: 520px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.tag-select:hover .tag-dropdown {
+  display: block;
+}
+</style>
 </head>
 
 <body>
@@ -61,264 +93,306 @@
 
 <h1>Problem List</h1>
 
-<!-- 分页 -->
+<div class="filter">
+  <div>
+    难度：
+    <input id="minDiffInput" type="number" style="width:80px;">
+    ~
+    <input id="maxDiffInput" type="number" style="width:80px;">
+    <button onclick="applyFilter()">筛选</button>
+  </div>
+
+  <div style="margin-top:6px;">
+    搜索题号：
+    <input id="searchInput" type="text" style="width:180px;">
+    <button onclick="applySearch()">搜索</button>
+  </div>
+
+  <div>
+    <div class="tag-select">
+      <button>标签筛选</button>
+      <div class="tag-dropdown" id="tagDropdown"></div>
+    </div>
+  </div>
+
+  <div class="tag-filter" id="tagFilter"></div>
+</div>
+
 <div class="pagination" id="pagination"></div>
 
 <div class="jump">
-  跳到第 
-  <input id="jumpInput" type="number" min="1" style="width:60px;">
-  页
-  <button onclick="jumpPage()">Go</button>
+跳到第 
+<input id="jumpInput" type="number" style="width:60px;">
+页
+<button onclick="jumpPage()">Go</button>
 </div>
 
 <table>
-  <thead>
-    <tr>
-      <th>题号</th>
-      <th>难度</th>
-      <th>标签</th>
-      <th>
-        提交时间
-        <span class="sort-btn" id="timeSortBtn">⬇️</span>
-      </th>
-    </tr>
-  </thead>
-  <tbody id="list"></tbody>
+<thead>
+<tr>
+  <th>题号</th>
+  <th>
+    难度
+    <span class="sort-btn" id="diffSortBtn">↕️</span>
+  </th>
+  <th>标签</th>
+  <th>
+    提交时间
+    <span class="sort-btn" id="timeSortBtn">⬇️</span>
+  </th>
+</tr>
+</thead>
+<tbody id="list"></tbody>
 </table>
 
 <script>
 // ==========================
-// URL 参数读取
+// URL 解析
 // ==========================
 function getQuery() {
-  const params = new URLSearchParams(location.search);
+  const p = new URLSearchParams(location.search);
   return {
-    page: parseInt(params.get("page")) || 1,
-    order: params.get("order") || "desc"
+    page: parseInt(p.get("page")) || 1,
+    order: p.get("order") || "desc",
+    diffOrder: p.get("diffOrder") || "none",
+    minDiff: p.get("minDiff"),
+    maxDiff: p.get("maxDiff"),
+    search: p.get("search") || "",
+    tags: p.get("tags") ? p.get("tags").split(",") : []
   };
 }
 
-// ==========================
-// URL 更新
-// ==========================
 function updateURL() {
-  const params = new URLSearchParams();
+  const p = new URLSearchParams();
 
-  params.set("page", currentPage);
-  params.set("order", timeDesc ? "desc" : "asc");
+  p.set("page", currentPage);
+  p.set("order", timeDesc ? "desc" : "asc");
 
-  history.replaceState(null, "", "?" + params.toString());
+  if (diffOrder !== "none")
+    p.set("diffOrder", diffOrder);
+
+  if (minDiff !== null && minDiff !== "")
+    p.set("minDiff", minDiff);
+
+  if (maxDiff !== null && maxDiff !== "")
+    p.set("maxDiff", maxDiff);
+
+  if (searchText)
+    p.set("search", searchText);
+
+  if (selectedTags.length)
+    p.set("tags", selectedTags.join(","));
+
+  history.replaceState(null, "", "?" + p.toString());
 }
 
 // ==========================
-// 初始化
-// ==========================
-const base = location.pathname.includes("/code-saver/")
-  ? "/code-saver/"
-  : "/";
-
+const base = location.pathname.includes("/code-saver/") ? "/code-saver/" : "/";
 document.getElementById("home").href = base;
 
 const query = getQuery();
 
+let rawData = [];
 let data = [];
+
 let currentPage = query.page;
 const pageSize = 100;
+
 let timeDesc = query.order !== "asc";
+let diffOrder = query.diffOrder;
+
+let minDiff = query.minDiff ? parseInt(query.minDiff) : null;
+let maxDiff = query.maxDiff ? parseInt(query.maxDiff) : null;
+let searchText = query.search.toLowerCase();
+
+let selectedTags = [...query.tags]; // ⭐ 修复
+let allTags = new Set();
 
 // ==========================
-// 排序
+// 标签
 // ==========================
-function sortData() {
-  data.sort((a, b) => {
-    const ta = a.time || "";
-    const tb = b.time || "";
-    return timeDesc
-      ? tb.localeCompare(ta)
-      : ta.localeCompare(tb);
+function toggleTag(tag) {
+  const i = selectedTags.indexOf(tag);
+  if (i >= 0) selectedTags.splice(i, 1);
+  else selectedTags.push(tag);
+
+  currentPage = 1;
+  render();
+}
+
+function renderTagDropdown() {
+  tagDropdown.innerHTML = "";
+
+  allTags.forEach(tag => {
+    const span = document.createElement("span");
+    span.className = "tag" + (selectedTags.includes(tag) ? " active" : "");
+    span.textContent = tag;
+    span.onclick = () => toggleTag(tag);
+    tagDropdown.appendChild(span);
+  });
+}
+
+function renderTagFilter() {
+  tagFilter.innerHTML = "";
+
+  if (!selectedTags.length) return;
+
+  tagFilter.append("当前标签筛选： ");
+  selectedTags.forEach(tag => {
+    const s = document.createElement("span");
+    s.className = "tag active";
+    s.textContent = tag;
+    s.onclick = () => toggleTag(tag);
+    tagFilter.appendChild(s);
   });
 }
 
 // ==========================
-// 渲染
+function applyFilter() {
+  minDiff = minDiffInput.value || null;
+  maxDiff = maxDiffInput.value || null;
+
+  if (minDiff !== null) minDiff = parseInt(minDiff);
+  if (maxDiff !== null) maxDiff = parseInt(maxDiff);
+
+  currentPage = 1;
+  render();
+}
+
+function applySearch() {
+  searchText = searchInput.value.trim().toLowerCase();
+  currentPage = 1;
+  render();
+}
+
 // ==========================
-function render() {
-  sortData();
+function filterData() {
+  data = rawData.filter(item => {
+    const d = item.difficulty ?? -1; // ⭐ 修复
 
-  const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
-  if (currentPage > totalPages) currentPage = totalPages;
+    if (minDiff !== null && d < minDiff) return false;
+    if (maxDiff !== null && d > maxDiff) return false;
 
-  const tbody = document.getElementById("list");
-  tbody.innerHTML = "";
-
-  const start = (currentPage - 1) * pageSize;
-  const end = start + pageSize;
-
-  data.slice(start, end).forEach(item => {
-    const tr = document.createElement("tr");
-
-    const tdName = document.createElement("td");
-    const a = document.createElement("a");
-
-    const name = (item.names && item.names.length > 0)
-      ? item.names[0]
-      : "???";
-
-    a.href = base + "problems/" + name + "/";
-    a.textContent = name;
-
-    tdName.appendChild(a);
-
-    const tdDiff = document.createElement("td");
-    tdDiff.textContent = item.difficulty || "";
-
-    const tdTags = document.createElement("td");
-    if (Array.isArray(item.tags)) {
-      item.tags.forEach(tag => {
-        const span = document.createElement("span");
-        span.className = "tag";
-        span.textContent = tag;
-        tdTags.appendChild(span);
-      });
+    if (searchText) {
+      if (!item.problems?.some(p => p.toLowerCase().includes(searchText)))
+        return false;
     }
 
-    const tdTime = document.createElement("td");
-    tdTime.textContent = item.time || "";
+    for (const t of selectedTags) {
+      if (!item.tags?.includes(t)) return false;
+    }
 
-    tr.appendChild(tdName);
-    tr.appendChild(tdDiff);
-    tr.appendChild(tdTags);
-    tr.appendChild(tdTime);
-
-    tbody.appendChild(tr);
+    return true;
   });
+}
 
-  renderPagination();
+function sortData() {
+  data.sort((a, b) => {
+    if (diffOrder !== "none") {
+      return diffOrder === "asc"
+        ? a.difficulty - b.difficulty
+        : b.difficulty - a.difficulty;
+    }
+    return timeDesc
+      ? (b.time||"").localeCompare(a.time||"")
+      : (a.time||"").localeCompare(b.time||"");
+  });
+}
+
+// ==========================
+function render() {
+  filterData();
+  sortData();
+  renderTagFilter();
+  renderTagDropdown();
+
+  list.innerHTML = "";
+
+  data.slice((currentPage-1)*pageSize, currentPage*pageSize)
+    .forEach(item => {
+      const tr = document.createElement("tr");
+
+      const td = document.createElement("td");
+      const a = document.createElement("a");
+      a.href = base + "problems/" + item.name + "/";
+      a.textContent = item.name;
+      td.appendChild(a);
+
+      if (item.problems?.length > 1) {
+        const sub = document.createElement("div");
+        sub.style.fontSize = "12px";
+        sub.style.opacity = "0.7";
+        sub.style.whiteSpace = "nowrap";
+        sub.textContent = item.problems.join(" ");
+        td.appendChild(sub);
+      }
+
+      const td2 = document.createElement("td");
+      td2.textContent = item.difficulty;
+
+      const td3 = document.createElement("td");
+      item.tags?.forEach(tag=>{
+        const s=document.createElement("span");
+        s.className="tag"+(selectedTags.includes(tag)?" active":"");
+        s.textContent=tag;
+        s.onclick=()=>toggleTag(tag);
+        td3.appendChild(s);
+      });
+
+      const td4 = document.createElement("td");
+      td4.textContent = item.time;
+
+      tr.append(td, td2, td3, td4);
+      list.appendChild(tr);
+    });
+
   updateURL();
 }
 
 // ==========================
-// 分页
+// 按钮
 // ==========================
-function renderPagination() {
-  const totalPages = Math.ceil(data.length / pageSize);
-  const container = document.getElementById("pagination");
-  container.innerHTML = "";
-
-  const info = document.createElement("span");
-  info.textContent = `第 ${currentPage} / ${totalPages} 页 `;
-  container.appendChild(info);
-
-  const first = document.createElement("button");
-  first.textContent = "««";
-  first.disabled = currentPage === 1;
-  first.onclick = () => { currentPage = 1; render(); };
-  container.appendChild(first);
-
-  const prev = document.createElement("button");
-  prev.textContent = "«";
-  prev.disabled = currentPage === 1;
-  prev.onclick = () => { currentPage--; render(); };
-  container.appendChild(prev);
-
-  let left = currentPage - 2;
-  let right = currentPage + 2;
-
-  if (left < 1) {
-    right += (1 - left);
-    left = 1;
-  }
-
-  if (right > totalPages) {
-    left -= (right - totalPages);
-    right = totalPages;
-  }
-
-  if (left < 1) left = 1;
-
-  for (let i = left; i <= right; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-
-    if (i === currentPage) {
-      btn.classList.add("active-page");
-      btn.disabled = true;
-    }
-
-    btn.onclick = () => {
-      currentPage = i;
-      render();
-    };
-
-    container.appendChild(btn);
-  }
-
-  const next = document.createElement("button");
-  next.textContent = "»";
-  next.disabled = currentPage === totalPages;
-  next.onclick = () => { currentPage++; render(); };
-  container.appendChild(next);
-
-  const last = document.createElement("button");
-  last.textContent = "»»";
-  last.disabled = currentPage === totalPages;
-  last.onclick = () => { currentPage = totalPages; render(); };
-  container.appendChild(last);
-}
-
-// ==========================
-// 跳页
-// ==========================
-function jumpPage() {
-  const input = document.getElementById("jumpInput");
-  const totalPages = Math.ceil(data.length / pageSize);
-
-  let page = parseInt(input.value);
-  if (isNaN(page)) return;
-
-  if (page < 1) page = 1;
-  if (page > totalPages) page = totalPages;
-
-  currentPage = page;
-  render();
-}
-
-document.getElementById("jumpInput").addEventListener("keydown", e => {
-  if (e.key === "Enter") jumpPage();
-});
-
-// ==========================
-// 排序按钮
-// ==========================
-document.getElementById("timeSortBtn").onclick = () => {
+timeSortBtn.onclick = () => {
   timeDesc = !timeDesc;
+  timeSortBtn.textContent = timeDesc ? "⬇️" : "⬆️";
+  diffOrder = "none";
+  diffSortBtn.textContent = "↕️";
+  render();
+};
 
-  document.getElementById("timeSortBtn").textContent =
-    timeDesc ? "⬇️" : "⬆️";
+diffSortBtn.onclick = () => {
+  if (diffOrder==="none") diffOrder="desc";
+  else if (diffOrder==="desc") diffOrder="asc";
+  else diffOrder="none";
 
-  currentPage = 1;
+  diffSortBtn.textContent =
+    diffOrder==="desc"?"⬇️":
+    diffOrder==="asc"?"⬆️":"↕️";
+
   render();
 };
 
 // ==========================
-// 加载数据
-// ==========================
 fetch("index.json")
-  .then(r => r.json())
-  .then(json => {
-    data = json;
+.then(r=>r.json())
+.then(json=>{
+  rawData=json;
 
-    document.getElementById("timeSortBtn").textContent =
-      timeDesc ? "⬇️" : "⬆️";
+  json.forEach(i=>i.tags?.forEach(t=>allTags.add(t)));
 
-    render();
-  })
-  .catch(err => {
-    console.error(err);
-    document.getElementById("list").innerHTML =
-      "<tr><td colspan='4'>❌ Failed to load</td></tr>";
-  });
+  minDiffInput.value = minDiff ?? "";
+  maxDiffInput.value = maxDiff ?? "";
+  searchInput.value = searchText;
 
+  timeSortBtn.textContent = timeDesc ? "⬇️" : "⬆️";
+  diffSortBtn.textContent =
+    diffOrder==="desc"?"⬇️":
+    diffOrder==="asc"?"⬆️":"↕️";
+
+  currentPage = query.page || 1; // ⭐ 修复
+
+  render();
+});
 </script>
 
 </body>
