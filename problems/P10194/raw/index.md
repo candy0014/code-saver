@@ -1,6 +1,6 @@
 ## Basic
 
-- **difficulty:** 2000
+- **difficulty:** 2200
 - **tag:**
 	- 前缀和/差分
 	- 单调栈

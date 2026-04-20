@@ -3,26 +3,20 @@
 // ==========================
 function getParams() {
   const p = new URLSearchParams(location.search);
-
   const file = p.get("file") || "index.md";
 
-  // 去掉空段
   let parts = location.pathname.split("/").filter(x => x);
 
-  // 如果最后是 html（viewer.html），去掉它
   const last = parts[parts.length - 1];
-  if (last && last.includes(".html")) {
-    parts.pop();
-  }
+  if (last && last.includes(".html")) parts.pop();
 
-  // basePath = /code-saver/problems/P1001
   const basePath = "/" + parts.join("/");
 
   return { basePath, file };
 }
 
 // ==========================
-// HTML 转义
+// HTML escape
 // ==========================
 function escapeHtml(str) {
   return str
@@ -32,7 +26,7 @@ function escapeHtml(str) {
 }
 
 // ==========================
-// 扩展名
+// extension
 // ==========================
 function getExt(file) {
   const i = file.lastIndexOf(".");
@@ -40,38 +34,41 @@ function getExt(file) {
 }
 
 // ==========================
-// 主逻辑
+// KaTeX render
+// ==========================
+function renderMath(el) {
+  if (!window.renderMathInElement) {
+    console.error("KaTeX auto-render not loaded");
+    return;
+  }
+
+  window.renderMathInElement(el, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "$", right: "$", display: false }
+    ],
+    throwOnError: false
+  });
+}
+
+// ==========================
+// main
 // ==========================
 async function load() {
   const { basePath, file } = getParams();
   const ext = getExt(file);
 
-  const titleEl = document.getElementById("title");
   const contentEl = document.getElementById("content");
-  const baseEl = document.getElementById("base");
+  const titleEl = document.getElementById("title");
   const backEl = document.getElementById("back");
-
   console.log("basePath:", basePath);
   console.log("file:", file);
 
-  if (!basePath) {
-    contentEl.innerHTML = "<h2>❌ Invalid path</h2>";
-    return;
-  }
-
-  // 标题
   if (titleEl) {
-    titleEl.textContent = basePath.split("/").pop();
+    titleEl.textContent = file;
   }
-
-  // base link
-  if (baseEl) {
-    baseEl.href = basePath + "/";
-  }
-
-  // ==========================
-  // back 逻辑（核心）
-  // ==========================
+  
   if (backEl) {
     const params = new URLSearchParams(location.search);
     const hasFile = params.has("file");
@@ -88,50 +85,51 @@ async function load() {
   }
 
   try {
-    // ==========================
-    // 拼接 raw 路径
-    // ==========================
     const url = basePath + "/raw/" + file;
-
     console.log("fetch:", url);
 
     const res = await fetch(url);
-
     if (!res.ok) {
-      contentEl.innerHTML = "<h2>❌ File not found</h2>";
+      contentEl.innerHTML = "<h2>File not found</h2>";
       return;
     }
 
     const text = await res.text();
 
-    if (!text.trim()) {
-      contentEl.innerHTML = "<h2>⚠️ Empty file</h2>";
-      return;
-    }
-
     // ==========================
-    // 渲染
+    // Markdown / text
     // ==========================
     if (ext === "md") {
-      contentEl.innerHTML = marked.parse(text);
+      contentEl.innerHTML = marked.parse(text, {
+        breaks: true
+      });
     } else {
       contentEl.innerHTML =
         "<pre><code>" + escapeHtml(text) + "</code></pre>";
     }
 
     // ==========================
-    // 高亮
+    // highlight
     // ==========================
     if (window.hljs) {
-      document.querySelectorAll("pre code").forEach(block => {
-        hljs.highlightElement(block);
-      });
+      document.querySelectorAll("pre code")
+        .forEach(b => hljs.highlightElement(b));
     }
 
-  } catch (err) {
-    console.error(err);
-    contentEl.innerHTML = "<h2>❌ Load failed</h2>";
+    // ==========================
+    // KaTeX
+    // ==========================
+    renderMath(contentEl);
+
+  } catch (e) {
+    console.error(e);
+    contentEl.innerHTML = "<h2>Load failed</h2>";
   }
 }
 
-load();
+// ==========================
+// boot (关键：等待 defer scripts)
+// ==========================
+window.addEventListener("load", () => {
+  setTimeout(load, 50);
+});

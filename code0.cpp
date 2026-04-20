@@ -194,6 +194,7 @@ int main(){
 		string s="";
 		s=file.path();
 		for(int i=s.length()-1;i>=0&&s[i]!='/';i--) problem.name=s[i]+problem.name;
+		cerr<<problem.name<<"\n";
 		s+="/raw";
 		in.open(s+"/problem.conf",ios::in);
 		if(!in.is_open()) continue;
