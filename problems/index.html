@@ -145,6 +145,8 @@ tr:hover { background: #1f2630; }
 <tbody id="list"></tbody>
 </table>
 
+<div class="pagination" id="pagination-bottom"></div>
+
 <script>
 // ==========================
 // URL 解析
@@ -196,7 +198,7 @@ let rawData = [];
 let data = [];
 
 let currentPage = query.page;
-const pageSize = 100;
+const pageSize = 25;
 
 let timeDesc = query.order !== "asc";
 let diffOrder = query.diffOrder;
@@ -346,6 +348,7 @@ function render() {
       list.appendChild(tr);
     });
   renderPagination();
+  renderPaginationBottom();
   updateURL();
 }
 
@@ -416,6 +419,74 @@ function renderPagination() {
   last.disabled = currentPage === totalPages;
   last.onclick = () => { currentPage = totalPages; render(); };
   container.appendChild(last);
+
+}
+
+function renderPaginationBottom() {
+  const totalPages = Math.ceil(data.length / pageSize);
+  const container = document.getElementById("pagination-bottom");
+  container.innerHTML = "";
+
+  const info = document.createElement("span");
+  info.textContent = `第 ${currentPage} / ${totalPages} 页 `;
+  container.appendChild(info);
+
+  const first = document.createElement("button");
+  first.textContent = "««";
+  first.disabled = currentPage === 1;
+  first.onclick = () => { currentPage = 1; render(); };
+  container.appendChild(first);
+
+  const prev = document.createElement("button");
+  prev.textContent = "«";
+  prev.disabled = currentPage === 1;
+  prev.onclick = () => { currentPage--; render(); };
+  container.appendChild(prev);
+
+  let left = currentPage - 2;
+  let right = currentPage + 2;
+
+  if (left < 1) {
+    right += (1 - left);
+    left = 1;
+  }
+
+  if (right > totalPages) {
+    left -= (right - totalPages);
+    right = totalPages;
+  }
+
+  if (left < 1) left = 1;
+
+  for (let i = left; i <= right; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+
+    if (i === currentPage) {
+      btn.classList.add("active-page");
+      btn.disabled = true;
+    }
+
+    btn.onclick = () => {
+      currentPage = i;
+      render();
+    };
+
+    container.appendChild(btn);
+  }
+
+  const next = document.createElement("button");
+  next.textContent = "»";
+  next.disabled = currentPage === totalPages;
+  next.onclick = () => { currentPage++; render(); };
+  container.appendChild(next);
+
+  const last = document.createElement("button");
+  last.textContent = "»»";
+  last.disabled = currentPage === totalPages;
+  last.onclick = () => { currentPage = totalPages; render(); };
+  container.appendChild(last);
+
 }
 
 // ==========================

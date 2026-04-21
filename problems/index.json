@@ -190,5 +190,77 @@
 "difficulty": 3000,
 "time": "2026-04-20 21:18:54",
 "tags": ["构造"]
+},
+{
+"name": "CF2131H",
+"problems": ["CF2131H"],
+"search": ["CF2131H"],
+"difficulty": 2600,
+"time": "2026-04-15 20:03:10",
+"tags": ["数论","莫比乌斯反演"]
+},
+{
+"name": "CF2178I",
+"problems": ["CF2178I"],
+"search": ["CF2178I"],
+"difficulty": 3300,
+"time": "2026-04-08 10:31:44",
+"tags": ["状压DP"]
+},
+{
+"name": "CF2217E",
+"problems": ["CF2217E"],
+"search": ["CF2217E"],
+"difficulty": 2000,
+"time": "2026-04-08 08:10:53",
+"tags": ["贪心"]
+},
+{
+"name": "CF1874F",
+"problems": ["CF1874F"],
+"search": ["CF1874F"],
+"difficulty": 3500,
+"time": "2026-04-02 20:24:03",
+"tags": ["DP"]
+},
+{
+"name": "CF521E",
+"problems": ["CF521E"],
+"search": ["CF521E"],
+"difficulty": 3100,
+"time": "2026-04-02 13:37:09",
+"tags": ["搜索"]
+},
+{
+"name": "CF2211G",
+"problems": ["CF2211G"],
+"search": ["CF2211G"],
+"difficulty": 2900,
+"time": "2026-04-02 11:00:23",
+"tags": ["贪心"]
+},
+{
+"name": "P13342",
+"problems": ["P13342","QOJ13168"],
+"search": ["P13342","QOJ13168"],
+"difficulty": 2800,
+"time": "2026-04-21 12:59:38",
+"tags": ["Kruscal重构树","启发式合并","树状数组","扫描线"]
+},
+{
+"name": "P12740",
+"problems": ["P12740","QOJ338"],
+"search": ["P12740","QOJ338"],
+"difficulty": 2800,
+"time": "2026-04-21 13:01:15",
+"tags": ["博弈论","ad-hoc"]
+},
+{
+"name": "CF2187C",
+"problems": ["CF2187C"],
+"search": ["CF2187C"],
+"difficulty": 2300,
+"time": "2026-04-21 15:43:21",
+"tags": ["启发式合并"]
 }
 ]
