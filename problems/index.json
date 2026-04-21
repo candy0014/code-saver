@@ -262,5 +262,13 @@
 "difficulty": 2300,
 "time": "2026-04-21 15:43:21",
 "tags": ["启发式合并"]
+},
+{
+"name": "CF2187D",
+"problems": ["CF2187D"],
+"search": ["CF2187D"],
+"difficulty": 2600,
+"time": "2026-04-21 19:30:44",
+"tags": ["bitset","DP"]
 }
 ]
