@@ -270,5 +270,93 @@
 "difficulty": 2600,
 "time": "2026-04-21 19:30:44",
 "tags": ["bitset","DP"]
+},
+{
+"name": "AT_arc217_b",
+"problems": ["AT_arc217_b"],
+"search": ["AT_arc217_b"],
+"difficulty": 1900,
+"time": "2026-04-22 08:24:32",
+"tags": ["ad-hoc"]
+},
+{
+"name": "CF2156F1",
+"problems": ["CF2156F1"],
+"search": ["CF2156F1","CF2156F2"],
+"difficulty": 2200,
+"time": "2026-04-22 08:49:32",
+"tags": ["贪心"]
+},
+{
+"name": "CF2156F2",
+"problems": ["CF2156F2"],
+"search": ["CF2156F2","CF2156F1"],
+"difficulty": 3000,
+"time": "2026-04-22 09:16:01",
+"tags": ["贪心","数据结构","势能分析"]
+},
+{
+"name": "AT_agc072_a",
+"problems": ["AT_agc072_a"],
+"search": ["AT_agc072_a"],
+"difficulty": 2800,
+"time": "2026-04-16 08:18:45",
+"tags": ["DP"]
+},
+{
+"name": "P10764",
+"problems": ["P10764"],
+"search": ["P10764"],
+"difficulty": 2700,
+"time": "2026-04-08 09:31:04",
+"tags": ["DP","双连通分量","圆方树"]
+},
+{
+"name": "P14004",
+"problems": ["P14004"],
+"search": ["P14004"],
+"difficulty": 2200,
+"time": "2026-04-03 14:02:26",
+"tags": ["二分"]
+},
+{
+"name": "P8388",
+"problems": ["P8388"],
+"search": ["P8388"],
+"difficulty": 2600,
+"time": "2026-04-03 13:58:44",
+"tags": ["DP"]
+},
+{
+"name": "P9041",
+"problems": ["P9041","QOJ2130","LOJ3615"],
+"search": ["P9041","QOJ2130","LOJ3615"],
+"difficulty": 3000,
+"time": "2026-04-22 11:19:53",
+"tags": ["LGV引理","线性基"]
+},
+{
+"name": "AT_arc217_c",
+"problems": ["AT_arc217_c"],
+"search": ["AT_arc217_c"],
+"difficulty": 2200,
+"time": "2026-04-22 14:37:04",
+"tags": ["DP","组合"]
+},
+{
+"name": "AT_arc217_d",
+"problems": ["AT_arc217_d"],
+"search": ["AT_arc217_d"],
+"difficulty": 2700,
+"time": "2026-04-22 15:40:52",
+"tags": ["势能分析","单调栈"]
+},
+{
+"name": "CF2159D1",
+"problems": ["CF2159D1"],
+"search": ["CF2159D1"],
+"difficulty": 2500,
+"time": "2026-04-22 16:34:45",
+"tags": ["DP"]
 }
 ]
