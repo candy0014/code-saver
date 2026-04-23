@@ -354,9 +354,41 @@
 {
 "name": "CF2159D1",
 "problems": ["CF2159D1"],
-"search": ["CF2159D1"],
+"search": ["CF2159D1","CF2159D2"],
 "difficulty": 2500,
 "time": "2026-04-22 16:34:45",
 "tags": ["DP"]
+},
+{
+"name": "CF2159D2",
+"problems": ["CF2159D2"],
+"search": ["CF2159D2","CF2159D1"],
+"difficulty": 3200,
+"time": "2026-04-23 07:43:24",
+"tags": ["DP"]
+},
+{
+"name": "QOJ15314",
+"problems": ["QOJ15314"],
+"search": ["QOJ15314"],
+"difficulty": 2400,
+"time": "2026-04-23 08:39:11",
+"tags": ["交互"]
+},
+{
+"name": "QOJ15324",
+"problems": ["QOJ15324"],
+"search": ["QOJ15324"],
+"difficulty": 2700,
+"time": "2026-04-23 11:05:12",
+"tags": ["数据结构","分块"]
+},
+{
+"name": "P4751",
+"problems": ["P4751"],
+"search": ["P4751","P4719"],
+"difficulty": 2800,
+"time": "2026-04-23 16:14:52",
+"tags": ["Global-BST","动态DP"]
 }
 ]

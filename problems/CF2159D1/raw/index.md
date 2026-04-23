@@ -8,6 +8,8 @@
 
 - **Link**
 	- [CF2159D1](https://codeforces.com/problemset/problem/2159/D1)
+- **Hard**
+	- [CF2159D2](https://codeforces.com/problemset/problem/2159/D2)
 - **Code**
 	- [code](?file=code0.cpp)
 

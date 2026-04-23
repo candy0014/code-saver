@@ -91,9 +91,13 @@ tr:hover { background: #1f2630; }
   <a href="../">⬅ Back</a>
 </div>
 
-<h1>Problem List</h1>
+<h1>
+  Problem List 
+  <span id="problemCount" class="count-btn"></span>
+</h1>
 
 <div class="filter">
+
   <div>
     难度：
     <input id="minDiffInput" type="number" style="width:80px;">
@@ -350,6 +354,7 @@ function render() {
   renderPagination();
   renderPaginationBottom();
   updateURL();
+  document.getElementById("problemCount").innerText = `${data.length}`;
 }
 
 // ==========================

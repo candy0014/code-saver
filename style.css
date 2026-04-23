@@ -293,3 +293,22 @@ blockquote {
 ::-webkit-scrollbar-thumb:hover {
   background: #484f58;
 }
+
+
+.count-btn {
+  vertical-align: 5px;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 10px;
+  font-size: 14px;
+  color: #c9d1d9;
+  background: #30363d;
+  border: 1px solid #484f58;
+  border-radius: 999px; /* 圆润一点像胶囊 */
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.count-btn:hover {
+  background: #3c444d;
+}
