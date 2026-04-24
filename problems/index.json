@@ -390,5 +390,21 @@
 "difficulty": 2800,
 "time": "2026-04-23 20:48:29",
 "tags": ["GlobalBST","动态DP","TopTree"]
+},
+{
+"name": "CF1494F",
+"problems": ["CF1494F"],
+"search": ["CF1494F"],
+"difficulty": 2900,
+"time": "2026-04-24 14:31:30",
+"tags": ["欧拉路径"]
+},
+{
+"name": "P5024",
+"problems": ["P5024"],
+"search": ["P5024","P4751"],
+"difficulty": 2800,
+"time": "2026-04-24 19:44:50",
+"tags": ["动态DP","TopTree"]
 }
 ]
