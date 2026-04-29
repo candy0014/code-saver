@@ -406,5 +406,93 @@
 "difficulty": 2800,
 "time": "2026-04-24 19:44:50",
 "tags": ["动态DP","TopTree"]
+},
+{
+"name": "AT_xmascon16_b",
+"problems": ["AT_xmascon16_b"],
+"search": ["AT_xmascon16_b"],
+"difficulty": 2800,
+"time": "2026-04-27 19:15:38",
+"tags": ["构造","ad-hoc"]
+},
+{
+"name": "QOJ831",
+"problems": ["QOJ831"],
+"search": ["QOJ831"],
+"difficulty": 3000,
+"time": "2026-04-28 14:35:15",
+"tags": ["点分树","FFT"]
+},
+{
+"name": "CF2125F",
+"problems": ["CF2125F"],
+"search": ["CF2125F"],
+"difficulty": 3000,
+"time": "2026-04-28 19:45:59",
+"tags": ["wqs二分"]
+},
+{
+"name": "CF2206B",
+"problems": ["CF2206B"],
+"search": ["CF2206B"],
+"difficulty": 2500,
+"time": "2026-04-28 20:15:39",
+"tags": ["博弈论"]
+},
+{
+"name": "CF1685D1",
+"problems": ["CF1685D1"],
+"search": ["CF1685D1"],
+"difficulty": 2800,
+"time": "2026-04-29 07:53:06",
+"tags": ["贪心"]
+},
+{
+"name": "CF2226D",
+"problems": ["CF2226D"],
+"search": ["CF2226D"],
+"difficulty": 0,
+"time": "2026-04-29 08:35:19",
+"tags": ["贪心","构造"]
+},
+{
+"name": "CF1923F",
+"problems": ["CF1923F"],
+"search": ["CF1923F"],
+"difficulty": 2800,
+"time": "2026-04-29 13:41:06",
+"tags": ["贪心"]
+},
+{
+"name": "CF2189F",
+"problems": ["CF2189F"],
+"search": ["CF2189F"],
+"difficulty": 2800,
+"time": "2026-04-29 09:38:58",
+"tags": ["贪心"]
+},
+{
+"name": "CF896D",
+"problems": ["CF896D"],
+"search": ["CF896D"],
+"difficulty": 2900,
+"time": "2026-04-29 14:59:21",
+"tags": ["反射容斥"]
+},
+{
+"name": "CF1037G",
+"problems": ["CF1037G"],
+"search": ["CF1037G"],
+"difficulty": 3200,
+"time": "2026-04-29 16:22:48",
+"tags": ["博弈论","sg函数"]
+},
+{
+"name": "CF1379F2",
+"problems": ["CF1379F2"],
+"search": ["CF1379F2","CF1379F1"],
+"difficulty": 2800,
+"time": "2026-04-29 19:11:08",
+"tags": ["线段树"]
 }
 ]
