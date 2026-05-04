@@ -494,5 +494,61 @@
 "difficulty": 2800,
 "time": "2026-04-29 19:11:08",
 "tags": ["线段树"]
+},
+{
+"name": "CF1684G",
+"problems": ["CF1684G"],
+"search": ["CF1684G"],
+"difficulty": 2800,
+"time": "2026-04-30 07:55:14",
+"tags": ["贪心"]
+},
+{
+"name": "P16395",
+"problems": ["P16395"],
+"search": ["P16395"],
+"difficulty": 2600,
+"time": "2026-05-03 08:39:23",
+"tags": ["根号分治"]
+},
+{
+"name": "P16403",
+"problems": ["P16403"],
+"search": ["P16403"],
+"difficulty": 2700,
+"time": "2026-05-03 11:25:47",
+"tags": ["ad-hoc"]
+},
+{
+"name": "P16412",
+"problems": ["P16412"],
+"search": ["P16412"],
+"difficulty": 1000,
+"time": "2026-05-03 14:05:54",
+"tags": []
+},
+{
+"name": "P16413",
+"problems": ["P16413"],
+"search": ["P16413"],
+"difficulty": 1100,
+"time": "2026-05-03 14:09:01",
+"tags": []
+},
+{
+"name": "P16414",
+"problems": ["P16414"],
+"search": ["P16414"],
+"difficulty": 1900,
+"time": "2026-05-03 16:56:37",
+"tags": ["构造"]
+},
+{
+"name": "P16416",
+"problems": ["P16416"],
+"search": ["P16416"],
+"difficulty": 2600,
+"time": "2026-05-03 16:44:22",
+"tags": ["容斥"]
 }
 ]
