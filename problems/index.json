@@ -2,7 +2,7 @@
 {
 "name": "P15142",
 "problems": ["P15142","CF2157I","QOJ15715"],
-"search": ["P15142","CF2157I","QOJ15715"],
+"search": ["P15142","CF2157I","QOJ15715","博弈论","ad-hoc"],
 "difficulty": 3500,
 "time": "2026-04-17 15:12:38",
 "tags": ["博弈论","ad-hoc"]
@@ -10,7 +10,7 @@
 {
 "name": "P10194",
 "problems": ["P10194","P10318"],
-"search": ["P10194","P10318"],
+"search": ["P10194","P10318","前缀和/差分","单调栈"],
 "difficulty": 2200,
 "time": "2026-04-17 14:05:07",
 "tags": ["前缀和/差分","单调栈"]
@@ -18,7 +18,7 @@
 {
 "name": "P6881",
 "problems": ["P6881","QOJ2502","LOJ3256"],
-"search": ["P6881","QOJ2502","LOJ3256","P15133","QOJ17148","LOJ5570"],
+"search": ["P6881","QOJ2502","LOJ3256","P15133","QOJ17148","LOJ5570","树状数组","扫描线","单调栈"],
 "difficulty": 3000,
 "time": "2026-04-17 13:44:03",
 "tags": ["树状数组","扫描线","单调栈"]
@@ -26,7 +26,7 @@
 {
 "name": "P15133",
 "problems": ["P15133","QOJ17148","LOJ5570"],
-"search": ["P15133","QOJ17148","LOJ5570","P6881","QOJ2502","LOJ3256"],
+"search": ["P15133","QOJ17148","LOJ5570","P6881","QOJ2502","LOJ3256","树状数组","扫描线","单调栈"],
 "difficulty": 3000,
 "time": "2026-04-17 13:45:50",
 "tags": ["树状数组","扫描线","单调栈"]
@@ -34,7 +34,7 @@
 {
 "name": "P6715",
 "problems": ["P6715","QOJ2726"],
-"search": ["P6715","QOJ2726"],
+"search": ["P6715","QOJ2726","DP"],
 "difficulty": 3000,
 "time": "2026-04-20 18:30:09",
 "tags": ["DP"]
@@ -42,7 +42,7 @@
 {
 "name": "P11611",
 "problems": ["P11611","QOJ6035"],
-"search": ["P11611","QOJ6035"],
+"search": ["P11611","QOJ6035","字符串","AC自动机"],
 "difficulty": 3000,
 "time": "2026-04-15 15:21:08",
 "tags": ["字符串","AC自动机"]
@@ -50,7 +50,7 @@
 {
 "name": "P4745",
 "problems": ["P4745","QOJ3064"],
-"search": ["P4745","QOJ3064"],
+"search": ["P4745","QOJ3064","最短路"],
 "difficulty": 2600,
 "time": "2026-04-20 18:40:22",
 "tags": ["最短路"]
@@ -58,7 +58,7 @@
 {
 "name": "P11107",
 "problems": ["P11107","QOJ8905"],
-"search": ["P11107","QOJ8905"],
+"search": ["P11107","QOJ8905","DP","FFT"],
 "difficulty": 3000,
 "time": "2026-04-14 18:51:35",
 "tags": ["DP","FFT"]
@@ -66,7 +66,7 @@
 {
 "name": "P12581",
 "problems": ["P12581","LOJ5233"],
-"search": ["P12581","LOJ5233"],
+"search": ["P12581","LOJ5233","DP","线段树"],
 "difficulty": 2600,
 "time": "2026-04-14 15:45:26",
 "tags": ["DP","线段树"]
@@ -74,7 +74,7 @@
 {
 "name": "QOJ17680",
 "problems": ["QOJ17680"],
-"search": ["QOJ17680"],
+"search": ["QOJ17680","ad-hoc"],
 "difficulty": 3000,
 "time": "2026-04-18 16:01:15",
 "tags": ["ad-hoc"]
@@ -82,7 +82,7 @@
 {
 "name": "QOJ17678",
 "problems": ["QOJ17678"],
-"search": ["QOJ17678"],
+"search": ["QOJ17678","组合","容斥"],
 "difficulty": 2800,
 "time": "2026-04-16 15:22:18",
 "tags": ["组合","容斥"]
@@ -114,7 +114,7 @@
 {
 "name": "CF2173E",
 "problems": ["CF2173E"],
-"search": ["CF2173E"],
+"search": ["CF2173E","交互"],
 "difficulty": 2200,
 "time": "2026-04-19 20:12:39",
 "tags": ["交互"]
@@ -138,7 +138,7 @@
 {
 "name": "CF2173C",
 "problems": ["CF2173C"],
-"search": ["CF2173C"],
+"search": ["CF2173C","贪心"],
 "difficulty": 1400,
 "time": "2026-04-19 19:29:11",
 "tags": ["贪心"]
@@ -146,7 +146,7 @@
 {
 "name": "CF2173D",
 "problems": ["CF2173D"],
-"search": ["CF2173D"],
+"search": ["CF2173D","DP"],
 "difficulty": 1900,
 "time": "2026-04-19 19:54:39",
 "tags": ["DP"]
@@ -154,7 +154,7 @@
 {
 "name": "CF2173F",
 "problems": ["CF2173F"],
-"search": ["CF2173F"],
+"search": ["CF2173F","数据结构","二分"],
 "difficulty": 2600,
 "time": "2026-04-19 19:26:32",
 "tags": ["数据结构","二分"]
@@ -162,7 +162,7 @@
 {
 "name": "CF1740H",
 "problems": ["CF1740H"],
-"search": ["CF1740H"],
+"search": ["CF1740H","数据结构","动态DP"],
 "difficulty": 3300,
 "time": "2026-04-16 19:43:06",
 "tags": ["数据结构","动态DP"]
@@ -170,7 +170,7 @@
 {
 "name": "CF1158F",
 "problems": ["CF1158F"],
-"search": ["CF1158F"],
+"search": ["CF1158F","DP"],
 "difficulty": 3500,
 "time": "2026-04-16 11:10:44",
 "tags": ["DP"]
@@ -178,7 +178,7 @@
 {
 "name": "CF1336E2",
 "problems": ["CF1336E2"],
-"search": ["CF1336E2","CF1336E1"],
+"search": ["CF1336E2","CF1336E1","线性基","ad-hoc"],
 "difficulty": 3500,
 "time": "2026-04-09 09:00:25",
 "tags": ["线性基","ad-hoc"]
@@ -186,7 +186,7 @@
 {
 "name": "CF2158F2",
 "problems": ["CF2158F2"],
-"search": ["CF2158F2","CF2158F1"],
+"search": ["CF2158F2","CF2158F1","构造"],
 "difficulty": 3000,
 "time": "2026-04-20 21:18:54",
 "tags": ["构造"]
@@ -194,7 +194,7 @@
 {
 "name": "CF2131H",
 "problems": ["CF2131H"],
-"search": ["CF2131H"],
+"search": ["CF2131H","数论","莫比乌斯反演"],
 "difficulty": 2600,
 "time": "2026-04-15 20:03:10",
 "tags": ["数论","莫比乌斯反演"]
@@ -202,7 +202,7 @@
 {
 "name": "CF2178I",
 "problems": ["CF2178I"],
-"search": ["CF2178I"],
+"search": ["CF2178I","状压DP"],
 "difficulty": 3300,
 "time": "2026-04-08 10:31:44",
 "tags": ["状压DP"]
@@ -210,7 +210,7 @@
 {
 "name": "CF2217E",
 "problems": ["CF2217E"],
-"search": ["CF2217E"],
+"search": ["CF2217E","贪心"],
 "difficulty": 2000,
 "time": "2026-04-08 08:10:53",
 "tags": ["贪心"]
@@ -218,7 +218,7 @@
 {
 "name": "CF1874F",
 "problems": ["CF1874F"],
-"search": ["CF1874F"],
+"search": ["CF1874F","DP"],
 "difficulty": 3500,
 "time": "2026-04-02 20:24:03",
 "tags": ["DP"]
@@ -226,7 +226,7 @@
 {
 "name": "CF521E",
 "problems": ["CF521E"],
-"search": ["CF521E"],
+"search": ["CF521E","搜索"],
 "difficulty": 3100,
 "time": "2026-04-02 13:37:09",
 "tags": ["搜索"]
@@ -234,7 +234,7 @@
 {
 "name": "CF2211G",
 "problems": ["CF2211G"],
-"search": ["CF2211G"],
+"search": ["CF2211G","贪心"],
 "difficulty": 2900,
 "time": "2026-04-02 11:00:23",
 "tags": ["贪心"]
@@ -242,7 +242,7 @@
 {
 "name": "P13342",
 "problems": ["P13342","QOJ13168"],
-"search": ["P13342","QOJ13168"],
+"search": ["P13342","QOJ13168","Kruscal重构树","启发式合并","树状数组","扫描线"],
 "difficulty": 2800,
 "time": "2026-04-21 12:59:38",
 "tags": ["Kruscal重构树","启发式合并","树状数组","扫描线"]
@@ -250,7 +250,7 @@
 {
 "name": "P12740",
 "problems": ["P12740","QOJ338"],
-"search": ["P12740","QOJ338"],
+"search": ["P12740","QOJ338","博弈论","ad-hoc"],
 "difficulty": 2800,
 "time": "2026-04-21 13:01:15",
 "tags": ["博弈论","ad-hoc"]
@@ -258,7 +258,7 @@
 {
 "name": "CF2187C",
 "problems": ["CF2187C"],
-"search": ["CF2187C"],
+"search": ["CF2187C","启发式合并"],
 "difficulty": 2300,
 "time": "2026-04-21 15:43:21",
 "tags": ["启发式合并"]
@@ -266,7 +266,7 @@
 {
 "name": "CF2187D",
 "problems": ["CF2187D"],
-"search": ["CF2187D"],
+"search": ["CF2187D","bitset","DP"],
 "difficulty": 2600,
 "time": "2026-04-21 19:30:44",
 "tags": ["bitset","DP"]
@@ -274,7 +274,7 @@
 {
 "name": "AT_arc217_b",
 "problems": ["AT_arc217_b"],
-"search": ["AT_arc217_b"],
+"search": ["AT_arc217_b","ad-hoc"],
 "difficulty": 1900,
 "time": "2026-04-22 08:24:32",
 "tags": ["ad-hoc"]
@@ -282,7 +282,7 @@
 {
 "name": "CF2156F1",
 "problems": ["CF2156F1"],
-"search": ["CF2156F1","CF2156F2"],
+"search": ["CF2156F1","CF2156F2","贪心"],
 "difficulty": 2200,
 "time": "2026-04-22 08:49:32",
 "tags": ["贪心"]
@@ -290,7 +290,7 @@
 {
 "name": "CF2156F2",
 "problems": ["CF2156F2"],
-"search": ["CF2156F2","CF2156F1"],
+"search": ["CF2156F2","CF2156F1","贪心","数据结构","势能分析"],
 "difficulty": 3000,
 "time": "2026-04-22 09:16:01",
 "tags": ["贪心","数据结构","势能分析"]
@@ -298,7 +298,7 @@
 {
 "name": "AT_agc072_a",
 "problems": ["AT_agc072_a"],
-"search": ["AT_agc072_a"],
+"search": ["AT_agc072_a","DP"],
 "difficulty": 2800,
 "time": "2026-04-16 08:18:45",
 "tags": ["DP"]
@@ -306,7 +306,7 @@
 {
 "name": "P10764",
 "problems": ["P10764"],
-"search": ["P10764"],
+"search": ["P10764","DP","双连通分量","圆方树"],
 "difficulty": 2700,
 "time": "2026-04-08 09:31:04",
 "tags": ["DP","双连通分量","圆方树"]
@@ -314,7 +314,7 @@
 {
 "name": "P14004",
 "problems": ["P14004"],
-"search": ["P14004"],
+"search": ["P14004","二分"],
 "difficulty": 2200,
 "time": "2026-04-03 14:02:26",
 "tags": ["二分"]
@@ -322,7 +322,7 @@
 {
 "name": "P8388",
 "problems": ["P8388"],
-"search": ["P8388"],
+"search": ["P8388","DP"],
 "difficulty": 2600,
 "time": "2026-04-03 13:58:44",
 "tags": ["DP"]
@@ -330,7 +330,7 @@
 {
 "name": "P9041",
 "problems": ["P9041","QOJ2130","LOJ3615"],
-"search": ["P9041","QOJ2130","LOJ3615"],
+"search": ["P9041","QOJ2130","LOJ3615","LGV引理","线性基"],
 "difficulty": 3000,
 "time": "2026-04-22 11:19:53",
 "tags": ["LGV引理","线性基"]
@@ -338,7 +338,7 @@
 {
 "name": "AT_arc217_c",
 "problems": ["AT_arc217_c"],
-"search": ["AT_arc217_c"],
+"search": ["AT_arc217_c","DP","组合"],
 "difficulty": 2200,
 "time": "2026-04-22 14:37:04",
 "tags": ["DP","组合"]
@@ -346,7 +346,7 @@
 {
 "name": "AT_arc217_d",
 "problems": ["AT_arc217_d"],
-"search": ["AT_arc217_d"],
+"search": ["AT_arc217_d","势能分析","单调栈"],
 "difficulty": 2700,
 "time": "2026-04-22 15:40:52",
 "tags": ["势能分析","单调栈"]
@@ -354,7 +354,7 @@
 {
 "name": "CF2159D1",
 "problems": ["CF2159D1"],
-"search": ["CF2159D1","CF2159D2"],
+"search": ["CF2159D1","CF2159D2","DP"],
 "difficulty": 2500,
 "time": "2026-04-22 16:34:45",
 "tags": ["DP"]
@@ -362,7 +362,7 @@
 {
 "name": "CF2159D2",
 "problems": ["CF2159D2"],
-"search": ["CF2159D2","CF2159D1"],
+"search": ["CF2159D2","CF2159D1","DP"],
 "difficulty": 3200,
 "time": "2026-04-23 07:43:24",
 "tags": ["DP"]
@@ -370,7 +370,7 @@
 {
 "name": "QOJ15314",
 "problems": ["QOJ15314"],
-"search": ["QOJ15314"],
+"search": ["QOJ15314","交互"],
 "difficulty": 2400,
 "time": "2026-04-23 08:39:11",
 "tags": ["交互"]
@@ -378,7 +378,7 @@
 {
 "name": "QOJ15324",
 "problems": ["QOJ15324"],
-"search": ["QOJ15324"],
+"search": ["QOJ15324","数据结构","分块"],
 "difficulty": 2700,
 "time": "2026-04-23 11:05:12",
 "tags": ["数据结构","分块"]
@@ -386,7 +386,7 @@
 {
 "name": "P4751",
 "problems": ["P4751"],
-"search": ["P4751","P4719"],
+"search": ["P4751","P4719","GlobalBST","动态DP","TopTree"],
 "difficulty": 2800,
 "time": "2026-04-23 20:48:29",
 "tags": ["GlobalBST","动态DP","TopTree"]
@@ -394,7 +394,7 @@
 {
 "name": "CF1494F",
 "problems": ["CF1494F"],
-"search": ["CF1494F"],
+"search": ["CF1494F","欧拉路径"],
 "difficulty": 2900,
 "time": "2026-04-24 14:31:30",
 "tags": ["欧拉路径"]
@@ -402,7 +402,7 @@
 {
 "name": "P5024",
 "problems": ["P5024"],
-"search": ["P5024","P4751"],
+"search": ["P5024","P4751","动态DP","TopTree"],
 "difficulty": 2800,
 "time": "2026-04-24 19:44:50",
 "tags": ["动态DP","TopTree"]
@@ -410,7 +410,7 @@
 {
 "name": "AT_xmascon16_b",
 "problems": ["AT_xmascon16_b"],
-"search": ["AT_xmascon16_b"],
+"search": ["AT_xmascon16_b","构造","ad-hoc"],
 "difficulty": 2800,
 "time": "2026-04-27 19:15:38",
 "tags": ["构造","ad-hoc"]
@@ -418,7 +418,7 @@
 {
 "name": "QOJ831",
 "problems": ["QOJ831"],
-"search": ["QOJ831"],
+"search": ["QOJ831","点分树","FFT"],
 "difficulty": 3000,
 "time": "2026-04-28 14:35:15",
 "tags": ["点分树","FFT"]
@@ -426,7 +426,7 @@
 {
 "name": "CF2125F",
 "problems": ["CF2125F"],
-"search": ["CF2125F"],
+"search": ["CF2125F","wqs二分"],
 "difficulty": 3000,
 "time": "2026-04-28 19:45:59",
 "tags": ["wqs二分"]
@@ -434,7 +434,7 @@
 {
 "name": "CF2206B",
 "problems": ["CF2206B"],
-"search": ["CF2206B"],
+"search": ["CF2206B","博弈论"],
 "difficulty": 2500,
 "time": "2026-04-28 20:15:39",
 "tags": ["博弈论"]
@@ -442,7 +442,7 @@
 {
 "name": "CF1685D1",
 "problems": ["CF1685D1"],
-"search": ["CF1685D1"],
+"search": ["CF1685D1","贪心"],
 "difficulty": 2800,
 "time": "2026-04-29 07:53:06",
 "tags": ["贪心"]
@@ -450,7 +450,7 @@
 {
 "name": "CF2226D",
 "problems": ["CF2226D"],
-"search": ["CF2226D"],
+"search": ["CF2226D","贪心","构造"],
 "difficulty": 0,
 "time": "2026-04-29 08:35:19",
 "tags": ["贪心","构造"]
@@ -458,7 +458,7 @@
 {
 "name": "CF1923F",
 "problems": ["CF1923F"],
-"search": ["CF1923F"],
+"search": ["CF1923F","贪心"],
 "difficulty": 2800,
 "time": "2026-04-29 13:41:06",
 "tags": ["贪心"]
@@ -466,7 +466,7 @@
 {
 "name": "CF2189F",
 "problems": ["CF2189F"],
-"search": ["CF2189F"],
+"search": ["CF2189F","贪心"],
 "difficulty": 2800,
 "time": "2026-04-29 09:38:58",
 "tags": ["贪心"]
@@ -474,7 +474,7 @@
 {
 "name": "CF896D",
 "problems": ["CF896D"],
-"search": ["CF896D"],
+"search": ["CF896D","反射容斥"],
 "difficulty": 2900,
 "time": "2026-04-29 14:59:21",
 "tags": ["反射容斥"]
@@ -482,7 +482,7 @@
 {
 "name": "CF1037G",
 "problems": ["CF1037G"],
-"search": ["CF1037G"],
+"search": ["CF1037G","博弈论","sg函数"],
 "difficulty": 3200,
 "time": "2026-04-29 16:22:48",
 "tags": ["博弈论","sg函数"]
@@ -490,7 +490,7 @@
 {
 "name": "CF1379F2",
 "problems": ["CF1379F2"],
-"search": ["CF1379F2","CF1379F1"],
+"search": ["CF1379F2","CF1379F1","线段树"],
 "difficulty": 2800,
 "time": "2026-04-29 19:11:08",
 "tags": ["线段树"]
@@ -498,7 +498,7 @@
 {
 "name": "CF1684G",
 "problems": ["CF1684G"],
-"search": ["CF1684G"],
+"search": ["CF1684G","贪心"],
 "difficulty": 2800,
 "time": "2026-04-30 07:55:14",
 "tags": ["贪心"]
@@ -506,7 +506,7 @@
 {
 "name": "P16395",
 "problems": ["P16395"],
-"search": ["P16395"],
+"search": ["P16395","根号分治"],
 "difficulty": 2600,
 "time": "2026-05-03 08:39:23",
 "tags": ["根号分治"]
@@ -514,7 +514,7 @@
 {
 "name": "P16403",
 "problems": ["P16403"],
-"search": ["P16403"],
+"search": ["P16403","ad-hoc"],
 "difficulty": 2700,
 "time": "2026-05-03 11:25:47",
 "tags": ["ad-hoc"]
@@ -538,7 +538,7 @@
 {
 "name": "P16414",
 "problems": ["P16414"],
-"search": ["P16414"],
+"search": ["P16414","构造"],
 "difficulty": 1900,
 "time": "2026-05-03 16:56:37",
 "tags": ["构造"]
@@ -546,7 +546,7 @@
 {
 "name": "P16416",
 "problems": ["P16416"],
-"search": ["P16416"],
+"search": ["P16416","容斥"],
 "difficulty": 2600,
 "time": "2026-05-03 16:44:22",
 "tags": ["容斥"]
@@ -578,7 +578,7 @@
 {
 "name": "P16428",
 "problems": ["P16428"],
-"search": ["P16428"],
+"search": ["P16428","贪心"],
 "difficulty": 1800,
 "time": "2026-05-04 14:45:03",
 "tags": ["贪心"]
@@ -586,7 +586,7 @@
 {
 "name": "P16356",
 "problems": ["P16356"],
-"search": ["P16356"],
+"search": ["P16356","数论"],
 "difficulty": 2400,
 "time": "2026-05-05 07:51:01",
 "tags": ["数论"]
@@ -594,7 +594,7 @@
 {
 "name": "QOJ2615",
 "problems": ["QOJ2615"],
-"search": ["QOJ2615"],
+"search": ["QOJ2615","构造"],
 "difficulty": 2400,
 "time": "2026-05-05 10:58:26",
 "tags": ["构造"]
@@ -602,7 +602,7 @@
 {
 "name": "QOJ17186",
 "problems": ["QOJ17186"],
-"search": ["QOJ17186"],
+"search": ["QOJ17186","DP"],
 "difficulty": 3200,
 "time": "2026-05-05 16:06:43",
 "tags": ["DP"]
@@ -626,7 +626,7 @@
 {
 "name": "CF2156E",
 "problems": ["CF2156E"],
-"search": ["CF2156E"],
+"search": ["CF2156E","二分"],
 "difficulty": 2500,
 "time": "2026-05-06 08:19:08",
 "tags": ["二分"]
@@ -634,7 +634,7 @@
 {
 "name": "CF1646F",
 "problems": ["CF1646F"],
-"search": ["CF1646F"],
+"search": ["CF1646F","构造","ad-hoc"],
 "difficulty": 2900,
 "time": "2026-05-06 09:39:49",
 "tags": ["构造","ad-hoc"]
@@ -642,7 +642,7 @@
 {
 "name": "CF1063F",
 "problems": ["CF1063F"],
-"search": ["CF1063F"],
+"search": ["CF1063F","DP","贪心"],
 "difficulty": 3300,
 "time": "2026-05-15 15:58:50",
 "tags": ["DP","贪心"]
@@ -650,7 +650,7 @@
 {
 "name": "CF1523G",
 "problems": ["CF1523G"],
-"search": ["CF1523G"],
+"search": ["CF1523G","线段树"],
 "difficulty": 3200,
 "time": "2026-05-15 16:01:57",
 "tags": ["线段树"]
@@ -658,7 +658,7 @@
 {
 "name": "CF1526F",
 "problems": ["CF1526F"],
-"search": ["CF1526F"],
+"search": ["CF1526F","交互","随机化"],
 "difficulty": 3000,
 "time": "2026-05-15 16:05:29",
 "tags": ["交互","随机化"]
@@ -666,7 +666,7 @@
 {
 "name": "CF364D",
 "problems": ["CF364D"],
-"search": ["CF364D"],
+"search": ["CF364D","随机化"],
 "difficulty": 2900,
 "time": "2026-05-15 16:07:17",
 "tags": ["随机化"]
@@ -690,7 +690,7 @@
 {
 "name": "CF2018F3",
 "problems": ["CF2018F3"],
-"search": ["CF2018F3","CF2018F1","CF2018F2"],
+"search": ["CF2018F3","CF2018F1","CF2018F2","DP"],
 "difficulty": 3100,
 "time": "2026-05-14 17:43:44",
 "tags": ["DP"]
@@ -698,7 +698,7 @@
 {
 "name": "CF364E",
 "problems": ["CF364E"],
-"search": ["CF364E"],
+"search": ["CF364E","分治"],
 "difficulty": 3000,
 "time": "2026-05-14 08:06:24",
 "tags": ["分治"]
@@ -706,7 +706,7 @@
 {
 "name": "CF2223C",
 "problems": ["CF2223C"],
-"search": ["CF2223C"],
+"search": ["CF2223C","势能分析"],
 "difficulty": 0,
 "time": "2026-05-12 19:22:06",
 "tags": ["势能分析"]
@@ -714,7 +714,7 @@
 {
 "name": "CF2204F",
 "problems": ["CF2204F"],
-"search": ["CF2204F"],
+"search": ["CF2204F","贪心"],
 "difficulty": 2200,
 "time": "2026-05-12 19:10:08",
 "tags": ["贪心"]
@@ -730,7 +730,7 @@
 {
 "name": "CF2223A",
 "problems": ["CF2223A"],
-"search": ["CF2223A"],
+"search": ["CF2223A","贪心"],
 "difficulty": 0,
 "time": "2026-05-06 14:09:50",
 "tags": ["贪心"]
@@ -738,7 +738,7 @@
 {
 "name": "P14780",
 "problems": ["P14780"],
-"search": ["P14780"],
+"search": ["P14780","DP"],
 "difficulty": 2600,
 "time": "2026-05-12 14:02:20",
 "tags": ["DP"]
@@ -754,7 +754,7 @@
 {
 "name": "P14718",
 "problems": ["P14718"],
-"search": ["P14718"],
+"search": ["P14718","Hall定理"],
 "difficulty": 2700,
 "time": "2026-05-12 19:59:01",
 "tags": ["Hall定理"]
@@ -762,7 +762,7 @@
 {
 "name": "P16434",
 "problems": ["P16434"],
-"search": ["P16434"],
+"search": ["P16434","三分","ad-hoc"],
 "difficulty": 2800,
 "time": "2026-05-13 07:10:45",
 "tags": ["三分","ad-hoc"]
@@ -770,7 +770,7 @@
 {
 "name": "QOJ10045",
 "problems": ["QOJ10045"],
-"search": ["QOJ10045"],
+"search": ["QOJ10045","欧拉回路","网络流"],
 "difficulty": 2800,
 "time": "2026-05-14 13:42:38",
 "tags": ["欧拉回路","网络流"]
@@ -778,7 +778,7 @@
 {
 "name": "QOJ10040",
 "problems": ["QOJ10040"],
-"search": ["QOJ10040"],
+"search": ["QOJ10040","点分树"],
 "difficulty": 2900,
 "time": "2026-05-14 13:53:04",
 "tags": ["点分树"]
@@ -786,7 +786,7 @@
 {
 "name": "QOJ12120",
 "problems": ["QOJ12120"],
-"search": ["QOJ12120"],
+"search": ["QOJ12120","二维数点"],
 "difficulty": 2800,
 "time": "2026-05-15 13:53:11",
 "tags": ["二维数点"]
@@ -794,7 +794,7 @@
 {
 "name": "QOJ14116",
 "problems": ["QOJ14116"],
-"search": ["QOJ14116"],
+"search": ["QOJ14116","决策单调性"],
 "difficulty": 2900,
 "time": "2026-05-15 14:43:04",
 "tags": ["决策单调性"]
@@ -834,7 +834,7 @@
 {
 "name": "CF2231F",
 "problems": ["CF2231F"],
-"search": ["CF2231F"],
+"search": ["CF2231F","数论"],
 "difficulty": 0,
 "time": "2026-05-22 08:41:01",
 "tags": ["数论"]
@@ -850,7 +850,7 @@
 {
 "name": "P7213",
 "problems": ["P7213","QOJ3557"],
-"search": ["P7213","QOJ3557"],
+"search": ["P7213","QOJ3557","DP"],
 "difficulty": 3000,
 "time": "2026-05-19 15:05:46",
 "tags": ["DP"]
@@ -858,7 +858,7 @@
 {
 "name": "P12967",
 "problems": ["P12967","QOJ12412"],
-"search": ["P12967","QOJ12412"],
+"search": ["P12967","QOJ12412","Hash"],
 "difficulty": 2600,
 "time": "2026-05-19 19:52:30",
 "tags": ["Hash"]
@@ -874,7 +874,7 @@
 {
 "name": "QOJ18127",
 "problems": ["QOJ18127"],
-"search": ["QOJ18127"],
+"search": ["QOJ18127","贪心"],
 "difficulty": 1200,
 "time": "2026-05-18 08:08:16",
 "tags": ["贪心"]
@@ -882,7 +882,7 @@
 {
 "name": "QOJ18125",
 "problems": ["QOJ18125"],
-"search": ["QOJ18125"],
+"search": ["QOJ18125","贪心"],
 "difficulty": 1900,
 "time": "2026-05-18 08:27:52",
 "tags": ["贪心"]
@@ -890,7 +890,7 @@
 {
 "name": "P13960",
 "problems": ["P13960","QOJ7742"],
-"search": ["P13960","QOJ7742"],
+"search": ["P13960","QOJ7742","字符串","AC自动机"],
 "difficulty": 3000,
 "time": "2026-05-22 20:01:34",
 "tags": ["字符串","AC自动机"]
@@ -898,7 +898,7 @@
 {
 "name": "QOJ11127",
 "problems": ["QOJ11127"],
-"search": ["QOJ11127"],
+"search": ["QOJ11127","DP"],
 "difficulty": 3000,
 "time": "2026-05-18 15:49:37",
 "tags": ["DP"]
@@ -906,7 +906,7 @@
 {
 "name": "QOJ14944",
 "problems": ["QOJ14944"],
-"search": ["QOJ14944"],
+"search": ["QOJ14944","DP","贪心"],
 "difficulty": 2900,
 "time": "2026-05-22 10:42:04",
 "tags": ["DP","贪心"]
@@ -914,7 +914,7 @@
 {
 "name": "QOJ17744",
 "problems": ["QOJ17744"],
-"search": ["QOJ17744"],
+"search": ["QOJ17744","博弈论","ad-hoc"],
 "difficulty": 2800,
 "time": "2026-05-22 14:44:52",
 "tags": ["博弈论","ad-hoc"]
@@ -922,7 +922,7 @@
 {
 "name": "QOJ18004",
 "problems": ["QOJ18004"],
-"search": ["QOJ18004"],
+"search": ["QOJ18004","贪心","Hash"],
 "difficulty": 2900,
 "time": "2026-05-22 19:40:20",
 "tags": ["贪心","Hash"]
@@ -930,7 +930,7 @@
 {
 "name": "P16601",
 "problems": ["P16601"],
-"search": ["P16601"],
+"search": ["P16601","矩阵快速幂"],
 "difficulty": 2300,
 "time": "2026-05-23 13:26:11",
 "tags": ["矩阵快速幂"]
@@ -954,7 +954,7 @@
 {
 "name": "P16607",
 "problems": ["P16607"],
-"search": ["P16607"],
+"search": ["P16607","分块"],
 "difficulty": 2700,
 "time": "2026-05-23 16:09:37",
 "tags": ["分块"]
@@ -962,7 +962,7 @@
 {
 "name": "P16604",
 "problems": ["P16604"],
-"search": ["P16604"],
+"search": ["P16604","构造"],
 "difficulty": 1900,
 "time": "2026-05-27 14:35:48",
 "tags": ["构造"]
@@ -970,7 +970,7 @@
 {
 "name": "UOJ884",
 "problems": ["UOJ884"],
-"search": ["UOJ884"],
+"search": ["UOJ884","分块","数论"],
 "difficulty": 2800,
 "time": "2026-05-25 14:09:16",
 "tags": ["分块","数论"]
@@ -994,7 +994,7 @@
 {
 "name": "CF2229D",
 "problems": ["CF2229D"],
-"search": ["CF2229D"],
+"search": ["CF2229D","二分"],
 "difficulty": 0,
 "time": "2026-05-27 08:18:16",
 "tags": ["二分"]
@@ -1002,7 +1002,7 @@
 {
 "name": "CF2229E",
 "problems": ["CF2229E"],
-"search": ["CF2229E"],
+"search": ["CF2229E","贪心"],
 "difficulty": 0,
 "time": "2026-05-27 08:40:23",
 "tags": ["贪心"]
@@ -1010,7 +1010,7 @@
 {
 "name": "CF2229F",
 "problems": ["CF2229F"],
-"search": ["CF2229F"],
+"search": ["CF2229F","二分"],
 "difficulty": 0,
 "time": "2026-05-27 09:08:35",
 "tags": ["二分"]
@@ -1018,7 +1018,7 @@
 {
 "name": "CF2229H",
 "problems": ["CF2229H"],
-"search": ["CF2229H"],
+"search": ["CF2229H","DP"],
 "difficulty": 0,
 "time": "2026-05-27 11:49:44",
 "tags": ["DP"]
@@ -1042,7 +1042,7 @@
 {
 "name": "CF1286F",
 "problems": ["CF1286F"],
-"search": ["CF1286F"],
+"search": ["CF1286F","折半搜索"],
 "difficulty": 3100,
 "time": "2026-05-27 10:52:44",
 "tags": ["折半搜索"]
@@ -1050,7 +1050,7 @@
 {
 "name": "CF1906K",
 "problems": ["CF1906K"],
-"search": ["CF1906K"],
+"search": ["CF1906K","FWT"],
 "difficulty": 2500,
 "time": "2026-05-27 14:15:50",
 "tags": ["FWT"]
@@ -1058,7 +1058,7 @@
 {
 "name": "QOJ10706",
 "problems": ["QOJ10706"],
-"search": ["QOJ10706"],
+"search": ["QOJ10706","wqs二分","整体二分"],
 "difficulty": 2800,
 "time": "2026-05-25 19:20:31",
 "tags": ["wqs二分","整体二分"]
@@ -1066,9 +1066,177 @@
 {
 "name": "SOJ2539",
 "problems": ["SOJ2539"],
-"search": ["SOJ2539"],
+"search": ["SOJ2539","FWT"],
 "difficulty": 2600,
 "time": "2026-05-27 14:06:36",
 "tags": ["FWT"]
+},
+{
+"name": "CF1976F",
+"problems": ["CF1976F"],
+"search": ["CF1976F","贪心"],
+"difficulty": 2800,
+"time": "2026-05-27 18:27:36",
+"tags": ["贪心"]
+},
+{
+"name": "CF627E",
+"problems": ["CF672E"],
+"search": ["CF672E","双指针"],
+"difficulty": 3000,
+"time": "2026-05-28 08:02:45",
+"tags": ["双指针"]
+},
+{
+"name": "CF1326F2",
+"problems": ["CF1326F2"],
+"search": ["CF1326F2","CF1326F1","DP","状压"],
+"difficulty": 3200,
+"time": "2026-05-28 10:10:01",
+"tags": ["DP","状压"]
+},
+{
+"name": "CF1267H",
+"problems": ["CF1267H"],
+"search": ["CF1267H","SOJ1782","贪心","ad-hoc"],
+"difficulty": 3200,
+"time": "2026-05-28 13:58:31",
+"tags": ["贪心","ad-hoc"]
+},
+{
+"name": "QOJ6546",
+"problems": ["QOJ6546","SOJ2568"],
+"search": ["QOJ6546","SOJ2568","图匹配","贪心"],
+"difficulty": 3200,
+"time": "2026-05-29 09:34:15",
+"tags": ["图匹配","贪心"]
+},
+{
+"name": "CF1214G",
+"problems": ["CF1214G"],
+"search": ["CF1214G","bitset"],
+"difficulty": 3200,
+"time": "2026-05-29 10:35:32",
+"tags": ["bitset"]
+},
+{
+"name": "CF1268D",
+"problems": ["CF1268D"],
+"search": ["CF1268D","ad-hoc"],
+"difficulty": 3200,
+"time": "2026-05-29 16:20:58",
+"tags": ["ad-hoc"]
+},
+{
+"name": "QOJ5742",
+"problems": ["QOJ5742"],
+"search": ["QOJ5742","构造"],
+"difficulty": 1200,
+"time": "2026-05-29 16:24:08",
+"tags": ["构造"]
+},
+{
+"name": "QOJ5750",
+"problems": ["QOJ5750"],
+"search": ["QOJ5750"],
+"difficulty": 1600,
+"time": "2026-05-29 16:24:35",
+"tags": []
+},
+{
+"name": "QOJ5747",
+"problems": ["QOJ5747"],
+"search": ["QOJ5747"],
+"difficulty": 1800,
+"time": "2026-05-29 16:24:54",
+"tags": []
+},
+{
+"name": "QOJ5749",
+"problems": ["QOJ5749"],
+"search": ["QOJ5749","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-05-29 19:02:43",
+"tags": ["ad-hoc"]
+},
+{
+"name": "QOJ17342",
+"problems": ["QOJ17342"],
+"search": ["QOJ17342"],
+"difficulty": 1500,
+"time": "2026-05-31 18:37:12",
+"tags": []
+},
+{
+"name": "QOJ17351",
+"problems": ["QOJ17351"],
+"search": ["QOJ17351"],
+"difficulty": 1500,
+"time": "2026-05-31 18:37:56",
+"tags": []
+},
+{
+"name": "QOJ17350",
+"problems": ["QOJ17350"],
+"search": ["QOJ17350","贪心"],
+"difficulty": 2000,
+"time": "2026-05-31 18:41:57",
+"tags": ["贪心"]
+},
+{
+"name": "QOJ17352",
+"problems": ["QOJ17352"],
+"search": ["QOJ17352"],
+"difficulty": 2400,
+"time": "2026-05-31 18:42:27",
+"tags": []
+},
+{
+"name": "QOJ17348",
+"problems": ["QOJ17348"],
+"search": ["QOJ17348","贪心"],
+"difficulty": 2600,
+"time": "2026-05-31 18:44:46",
+"tags": ["贪心"]
+},
+{
+"name": "QOJ17355",
+"problems": ["QOJ17355"],
+"search": ["QOJ17355","点分树"],
+"difficulty": 2900,
+"time": "2026-05-31 18:46:09",
+"tags": ["点分树"]
+},
+{
+"name": "QOJ18405",
+"problems": ["QOJ18405"],
+"search": ["QOJ18405","KTT"],
+"difficulty": 2900,
+"time": "2026-05-31 18:48:43",
+"tags": ["KTT"]
+},
+{
+"name": "QOJ18401",
+"problems": ["QOJ18401"],
+"search": ["QOJ18401","线段树"],
+"difficulty": 2800,
+"time": "2026-05-31 18:51:09",
+"tags": ["线段树"]
+},
+{
+"name": "QOJ18406",
+"problems": ["QOJ18406"],
+"search": ["QOJ18406","搜索","贪心"],
+"difficulty": 2500,
+"time": "2026-05-31 18:51:24",
+"tags": ["搜索","贪心"]
+},
+{
+"name": "QOJ18413",
+"problems": ["QOJ18413"],
+"search": ["QOJ18413","二分","线段树"],
+"difficulty": 2900,
+"time": "2026-05-31 18:51:38",
+"tags": ["二分","线段树"]
 }
 ]

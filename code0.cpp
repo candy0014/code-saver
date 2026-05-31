@@ -190,6 +190,11 @@ struct Problem{
 				out<<"\""<<y.first<<"\"";
 			}
 		}
+		for(auto x:tag){
+			if(flag) out<<",";
+			flag=1;
+			out<<"\""<<x<<"\"";
+		}
 		out<<"],\n";
 		out<<"\"difficulty\": "<<difficulty<<",\n";
 		array<int,6>x;
