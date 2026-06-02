@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 2400
 - **tag:**
 	- 二分
 

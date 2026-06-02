@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 2600
 - **tag:**
 	- 数论
 

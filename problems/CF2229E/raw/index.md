@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 2100
 - **tag:**
 	- 贪心
 

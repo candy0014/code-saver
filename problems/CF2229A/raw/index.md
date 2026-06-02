@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 800
 
 ## Link
 

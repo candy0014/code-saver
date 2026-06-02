@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 2300
 - **tag:**
 	- 势能分析
 

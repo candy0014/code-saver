@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 3200
 - **tag:**
 	- DP
 

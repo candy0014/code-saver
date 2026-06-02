@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 1900
 - **tag:**
 	- 贪心
 	- 构造
