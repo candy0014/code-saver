@@ -13,5 +13,6 @@
 
 ## Submission
 
+- **2026-06-05 07:04** QOJ17355 [submission](https://qoj.ac/submission/2480176)
 - **2026-05-31 18:46** QOJ17355 [submission](https://qoj.ac/submission/2465067)
 

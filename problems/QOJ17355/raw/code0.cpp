@@ -165,7 +165,8 @@ void solve(){
 		update(u,res[u]);
 		for(int i=head[u];i;i=e[i].nex) if(!tag[e[i].to]) q.push(e[i].to),tag[e[i].to]=1;
 	}
-	for(int i=2;i<=n;i++) write(res[i]," \n"[i==n]);
+	for(int i=2;i<=n;i++) write(res[i],' ');
+	puts("");
 }
 int main(){
 	// freopen("test.in","r",stdin);
