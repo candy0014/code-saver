@@ -63,11 +63,14 @@ struct Problem{
 	vector<pair<string,string>> from;
 	vector<string>tag;
 	vector<Sub>sub;
+	array<int,6>subtime;
 	Problem(){
 		link.clear(),tag.clear();
 		difficulty=0;
 		from.clear();
 		name="";
+		sub.clear();
+		subtime={0,0,0,0,0,0};
 	}
 	void update_link(vector<string>p){
 		string name="";
@@ -105,20 +108,34 @@ struct Problem{
 		for(auto x:p) tag.emplace_back(x);
 	}
 	void update_sub(vector<string>p){
+		int flag=0;
 		for(auto x:p){
 			Sub tmp;
+			int f=0;
 			for(int i=0,cnt=0,cnt1=0;x[i];i++){
 				if(x[i]==';'){cnt++;continue;}
 				if(cnt==0){
+					if(x[i]=='*') f=1;
 					if(x[i]=='-'||x[i]==':'||x[i]==' '){cnt1++;continue;}
 					if(cnt1<=5&&'0'<=x[i]&&x[i]<='9') tmp.tim[cnt1]=tmp.tim[cnt1]*10+x[i]-'0'; 
 				}
 				if(cnt==1) tmp.name+=x[i];
 				if(cnt==2) tmp.link+=x[i];
 			}
+			if(f) subtime=tmp.tim,flag=1;
 			sub.push_back(tmp);
 		}
 		sort(sub.begin(),sub.end(),[&](Sub u,Sub v){return u.tim>v.tim;});
+		if(!flag){
+			if(sub.size()){
+				for(auto x:sub) if(x.name==name){
+					subtime=x.tim,flag=1;
+					break;
+				}
+				if(!flag) subtime=sub.back().tim;
+			}
+			else subtime={0,0,0,0,0,0};
+		}
 	}
 	void work(string op,vector<string>p){
 		if(op=="link"){update_link(p);return;}
@@ -197,9 +214,7 @@ struct Problem{
 		}
 		out<<"],\n";
 		out<<"\"difficulty\": "<<difficulty<<",\n";
-		array<int,6>x;
-		if(sub.size()) x=sub[0].tim;
-		else x={0,0,0,0,0,0};
+		array<int,6>x=subtime;
 		out<<"\"time\": "<<"\""<<to_string0(x[0],4)<<"-"<<to_string0(x[1],2)<<"-"<<to_string0(x[2],2)<<" "<<to_string0(x[3],2)<<":"<<to_string0(x[4],2)<<":"<<to_string0(x[5],2)<<"\",\n";
 		out<<"\"tags\": [";
 		flag=0;
@@ -260,6 +275,7 @@ int main(){
 	out.open("./problems/index.json",ios::out|ios::trunc);
 	out<<"[\n";
 	for(int i=0;i<(int)P.size();i++){
+		// if(P[i].sub.size()>=2) cerr<<P[i].name<<"!\n";
 		P[i].print2();
 		if(i!=(int)P.size()-1) out<<",\n";
 		else out<<"\n";
