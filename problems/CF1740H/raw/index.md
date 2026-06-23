@@ -3,6 +3,7 @@
 - **difficulty:** 3300
 - **tag:**
 	- 数据结构
+	- DP
 	- 动态DP
 
 ## Link

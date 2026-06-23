@@ -3,6 +3,7 @@
 - **difficulty:** 2800
 - **tag:**
 	- GlobalBST
+	- DP
 	- 动态DP
 	- TopTree
 

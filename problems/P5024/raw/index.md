@@ -2,6 +2,7 @@
 
 - **difficulty:** 2800
 - **tag:**
+	- DP
 	- 动态DP
 	- TopTree
 

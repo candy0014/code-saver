@@ -162,10 +162,10 @@
 {
 "name": "CF1740H",
 "problems": ["CF1740H"],
-"search": ["CF1740H","数据结构","动态DP"],
+"search": ["CF1740H","数据结构","DP","动态DP"],
 "difficulty": 3300,
 "time": "2026-04-16 19:43:06",
-"tags": ["数据结构","动态DP"]
+"tags": ["数据结构","DP","动态DP"]
 },
 {
 "name": "CF1158F",
@@ -202,10 +202,10 @@
 {
 "name": "CF2178I",
 "problems": ["CF2178I"],
-"search": ["CF2178I","状压DP"],
+"search": ["CF2178I","DP","状压DP"],
 "difficulty": 3300,
 "time": "2026-04-08 10:31:44",
-"tags": ["状压DP"]
+"tags": ["DP","状压DP"]
 },
 {
 "name": "CF2217E",
@@ -386,10 +386,10 @@
 {
 "name": "P4751",
 "problems": ["P4751"],
-"search": ["P4751","P4719","GlobalBST","动态DP","TopTree"],
+"search": ["P4751","P4719","GlobalBST","DP","动态DP","TopTree"],
 "difficulty": 2800,
 "time": "2026-04-23 20:48:29",
-"tags": ["GlobalBST","动态DP","TopTree"]
+"tags": ["GlobalBST","DP","动态DP","TopTree"]
 },
 {
 "name": "CF1494F",
@@ -402,10 +402,10 @@
 {
 "name": "P5024",
 "problems": ["P5024"],
-"search": ["P5024","P4751","动态DP","TopTree"],
+"search": ["P5024","P4751","DP","动态DP","TopTree"],
 "difficulty": 2800,
 "time": "2026-04-24 19:44:50",
-"tags": ["动态DP","TopTree"]
+"tags": ["DP","动态DP","TopTree"]
 },
 {
 "name": "AT_xmascon16_b",
@@ -1090,10 +1090,10 @@
 {
 "name": "CF1326F2",
 "problems": ["CF1326F2"],
-"search": ["CF1326F2","CF1326F1","DP","状压"],
+"search": ["CF1326F2","CF1326F1","DP","状压DP"],
 "difficulty": 3200,
 "time": "2026-05-28 10:10:01",
-"tags": ["DP","状压"]
+"tags": ["DP","状压DP"]
 },
 {
 "name": "CF1267H",
@@ -1654,5 +1654,37 @@
 "difficulty": 2400,
 "time": "2026-06-19 12:02:20",
 "tags": []
+},
+{
+"name": "P11647",
+"problems": ["P11647"],
+"search": ["P11647","构造","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-06-20 13:39:54",
+"tags": ["构造","ad-hoc"]
+},
+{
+"name": "P11994",
+"problems": ["P11994","QOJ11412"],
+"search": ["P11994","QOJ11412","贪心"],
+"difficulty": 3000,
+"time": "2026-06-23 10:09:39",
+"tags": ["贪心"]
+},
+{
+"name": "P11993",
+"problems": ["P11993","QOJ11411"],
+"search": ["P11993","QOJ11411","线段树","线段树合并"],
+"difficulty": 2700,
+"time": "2026-06-23 11:33:50",
+"tags": ["线段树","线段树合并"]
+},
+{
+"name": "QOJ14978",
+"problems": ["QOJ14978"],
+"search": ["QOJ14978","交互","信息论","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-06-23 08:14:28",
+"tags": ["交互","信息论","ad-hoc"]
 }
 ]

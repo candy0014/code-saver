@@ -3,7 +3,7 @@
 - **difficulty:** 3200
 - **tag:**
 	- DP
-	- 状压
+	- 状压DP
 
 ## Link
 
