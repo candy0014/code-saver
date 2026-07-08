@@ -1686,5 +1686,341 @@
 "difficulty": 2800,
 "time": "2026-06-23 08:14:28",
 "tags": ["交互","信息论","ad-hoc"]
+},
+{
+"name": "P11923",
+"problems": ["P11923","QOJ10245","LOJ4874"],
+"search": ["P11923","QOJ10245","LOJ4874","线段树"],
+"difficulty": 3000,
+"time": "2026-06-25 14:56:47",
+"tags": ["线段树"]
+},
+{
+"name": "P16995",
+"problems": ["P16995"],
+"search": ["P16995","贪心"],
+"difficulty": 2200,
+"time": "2026-06-28 15:31:24",
+"tags": ["贪心"]
+},
+{
+"name": "P15285",
+"problems": ["P15285","QOJ2790"],
+"search": ["P15285","QOJ2790","交互","ad-hoc"],
+"difficulty": 2900,
+"time": "2026-06-30 11:07:36",
+"tags": ["交互","ad-hoc"]
+},
+{
+"name": "P12983",
+"problems": ["P12983","QOJ12475"],
+"search": ["P12983","QOJ12475","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-07-02 09:09:31",
+"tags": ["ad-hoc"]
+},
+{
+"name": "P16567",
+"problems": ["P16567","QOJ18242","CF2206I"],
+"search": ["P16567","QOJ18242","CF2206I","DP","倍增"],
+"difficulty": 2800,
+"time": "2026-07-06 15:58:21",
+"tags": ["DP","倍增"]
+},
+{
+"name": "QOJ18515",
+"problems": ["QOJ18515"],
+"search": ["QOJ18515","交互","ad-hoc"],
+"difficulty": 2700,
+"time": "2026-06-24 16:28:49",
+"tags": ["交互","ad-hoc"]
+},
+{
+"name": "QOJ14707",
+"problems": ["QOJ14707"],
+"search": ["QOJ14707","矩阵快速幂"],
+"difficulty": 2300,
+"time": "2026-06-30 15:03:25",
+"tags": ["矩阵快速幂"]
+},
+{
+"name": "QOJ8952",
+"problems": ["QOJ8952"],
+"search": ["QOJ8952","ZR3499","交互","构造","ad-hoc"],
+"difficulty": 3100,
+"time": "2026-07-06 14:56:21",
+"tags": ["交互","构造","ad-hoc"]
+},
+{
+"name": "QOJ12150",
+"problems": ["QOJ12150"],
+"search": ["QOJ12150","构造"],
+"difficulty": 2500,
+"time": "2026-07-07 19:26:03",
+"tags": ["构造"]
+},
+{
+"name": "CF2233A",
+"problems": ["CF2233A"],
+"search": ["CF2233A"],
+"difficulty": 800,
+"time": "2026-06-24 07:17:53",
+"tags": []
+},
+{
+"name": "CF2233B",
+"problems": ["CF2233B"],
+"search": ["CF2233B"],
+"difficulty": 900,
+"time": "2026-06-24 07:22:59",
+"tags": []
+},
+{
+"name": "CF2233C",
+"problems": ["CF2233C"],
+"search": ["CF2233C"],
+"difficulty": 1400,
+"time": "2026-06-24 08:31:30",
+"tags": []
+},
+{
+"name": "CF2233D",
+"problems": ["CF2233D"],
+"search": ["CF2233D"],
+"difficulty": 1900,
+"time": "2026-06-24 07:45:48",
+"tags": []
+},
+{
+"name": "CF2233E2",
+"problems": ["CF2233E2"],
+"search": ["CF2233E2","CF2233E1","交互","贪心"],
+"difficulty": 2300,
+"time": "2026-06-24 08:09:37",
+"tags": ["交互","贪心"]
+},
+{
+"name": "CF2237A",
+"problems": ["CF2237A"],
+"search": ["CF2237A"],
+"difficulty": 800,
+"time": "2026-06-24 08:34:30",
+"tags": []
+},
+{
+"name": "CF2237B",
+"problems": ["CF2237B"],
+"search": ["CF2237B"],
+"difficulty": 1000,
+"time": "2026-06-24 08:44:57",
+"tags": []
+},
+{
+"name": "CF2237C",
+"problems": ["CF2237C"],
+"search": ["CF2237C","贪心"],
+"difficulty": 1000,
+"time": "2026-06-24 08:49:09",
+"tags": ["贪心"]
+},
+{
+"name": "CF2237D",
+"problems": ["CF2237D"],
+"search": ["CF2237D"],
+"difficulty": 1500,
+"time": "2026-06-24 09:07:20",
+"tags": []
+},
+{
+"name": "CF2237E",
+"problems": ["CF2237E"],
+"search": ["CF2237E"],
+"difficulty": 2000,
+"time": "2026-06-24 09:37:07",
+"tags": []
+},
+{
+"name": "CF2237F",
+"problems": ["CF2237F"],
+"search": ["CF2237F","DP"],
+"difficulty": 2400,
+"time": "2026-06-24 10:20:00",
+"tags": ["DP"]
+},
+{
+"name": "CF2233F",
+"problems": ["CF2233F"],
+"search": ["CF2233F","数论"],
+"difficulty": 2800,
+"time": "2026-06-28 08:37:21",
+"tags": ["数论"]
+},
+{
+"name": "CF2239A",
+"problems": ["CF2239A"],
+"search": ["CF2239A","博弈论"],
+"difficulty": 1300,
+"time": "2026-06-28 08:50:19",
+"tags": ["博弈论"]
+},
+{
+"name": "CF2239B",
+"problems": ["CF2239B"],
+"search": ["CF2239B"],
+"difficulty": 1500,
+"time": "2026-06-28 09:02:15",
+"tags": []
+},
+{
+"name": "CF2239C",
+"problems": ["CF2239C"],
+"search": ["CF2239C"],
+"difficulty": 2200,
+"time": "2026-06-28 09:44:50",
+"tags": []
+},
+{
+"name": "CF2242A",
+"problems": ["CF2242A"],
+"search": ["CF2242A"],
+"difficulty": 0,
+"time": "2026-07-07 07:47:49",
+"tags": []
+},
+{
+"name": "CF2242B",
+"problems": ["CF2242B"],
+"search": ["CF2242B"],
+"difficulty": 0,
+"time": "2026-07-07 07:52:56",
+"tags": []
+},
+{
+"name": "CF2242C",
+"problems": ["CF2242C"],
+"search": ["CF2242C"],
+"difficulty": 0,
+"time": "2026-07-07 07:59:55",
+"tags": []
+},
+{
+"name": "CF2242D",
+"problems": ["CF2242D"],
+"search": ["CF2242D"],
+"difficulty": 0,
+"time": "2026-07-07 08:08:54",
+"tags": []
+},
+{
+"name": "CF2242F",
+"problems": ["CF2242F"],
+"search": ["CF2242F","平衡树"],
+"difficulty": 0,
+"time": "2026-07-07 09:02:57",
+"tags": ["平衡树"]
+},
+{
+"name": "CF2163D2",
+"problems": ["CF2163D2"],
+"search": ["CF2163D2","CF2163D1","交互"],
+"difficulty": 2500,
+"time": "2026-07-07 14:19:28",
+"tags": ["交互"]
+},
+{
+"name": "CF1129E",
+"problems": ["CF1129E"],
+"search": ["CF1129E","交互","二分"],
+"difficulty": 3100,
+"time": "2026-07-07 14:56:49",
+"tags": ["交互","二分"]
+},
+{
+"name": "ZR3489",
+"problems": ["ZR3489"],
+"search": ["ZR3489","slope trick","保序回归"],
+"difficulty": 2800,
+"time": "2026-06-29 08:17:00",
+"tags": ["slope trick","保序回归"]
+},
+{
+"name": "ZR3490",
+"problems": ["ZR3490"],
+"search": ["ZR3490","exchange argument","哈希","倍增"],
+"difficulty": 2900,
+"time": "2026-06-30 14:37:00",
+"tags": ["exchange argument","哈希","倍增"]
+},
+{
+"name": "ZR3491",
+"problems": ["ZR3491"],
+"search": ["ZR3491","组合"],
+"difficulty": 2900,
+"time": "2026-06-29 12:12:00",
+"tags": ["组合"]
+},
+{
+"name": "ZR3492",
+"problems": ["ZR3492"],
+"search": ["ZR3492","倍增"],
+"difficulty": 2700,
+"time": "2026-07-03 09:55:00",
+"tags": ["倍增"]
+},
+{
+"name": "ZR3493",
+"problems": ["ZR3493"],
+"search": ["ZR3493","DP"],
+"difficulty": 2900,
+"time": "2026-07-01 14:24:00",
+"tags": ["DP"]
+},
+{
+"name": "ZR3495",
+"problems": ["ZR3495"],
+"search": ["ZR3495","图匹配"],
+"difficulty": 2600,
+"time": "2026-07-01 09:53:00",
+"tags": ["图匹配"]
+},
+{
+"name": "ZR3498",
+"problems": ["ZR3498"],
+"search": ["ZR3498","贪心"],
+"difficulty": 1600,
+"time": "2026-07-08 09:31:00",
+"tags": ["贪心"]
+},
+{
+"name": "ZR3499",
+"problems": ["ZR3499"],
+"search": ["ZR3499","QOJ8952","交互","构造","ad-hoc"],
+"difficulty": 3300,
+"time": "2026-07-06 14:51:00",
+"tags": ["交互","构造","ad-hoc"]
+},
+{
+"name": "ZR3501",
+"problems": ["ZR3501"],
+"search": ["ZR3501","DP","矩阵快速幂"],
+"difficulty": 2900,
+"time": "2026-07-08 09:13:00",
+"tags": ["DP","矩阵快速幂"]
+},
+{
+"name": "ZR3502",
+"problems": ["ZR3502"],
+"search": ["ZR3502","DP","倍增"],
+"difficulty": 2900,
+"time": "2026-07-06 09:33:00",
+"tags": ["DP","倍增"]
+},
+{
+"name": "QOJ5529",
+"problems": ["QOJ5529","ZR3503"],
+"search": ["QOJ5529","ZR3503","构造","ad-hoc"],
+"difficulty": 3300,
+"time": "2026-07-08 15:32:45",
+"tags": ["构造","ad-hoc"]
 }
 ]

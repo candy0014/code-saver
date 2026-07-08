@@ -47,6 +47,9 @@ struct Problem{
 				if(str=="SOJ"){
 					y="http://121.196.149.251:8080/problem/"+substr(x,3);
 				}
+				if(str=="ZR"){
+					y="https://zhengruioi.com/problem/"+substr(x,2);
+				}
 			}
 			if(y=="null") y="";
 			p.push_back(make_pair(x,y));
