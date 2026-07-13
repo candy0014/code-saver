@@ -1,5 +1,6 @@
 ## Basic
 
+- **difficulty:** 2700
 - **tag:**
 	- 平衡树
 

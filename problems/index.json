@@ -1883,7 +1883,7 @@
 "name": "CF2242A",
 "problems": ["CF2242A"],
 "search": ["CF2242A"],
-"difficulty": 0,
+"difficulty": 800,
 "time": "2026-07-07 07:47:49",
 "tags": []
 },
@@ -1891,7 +1891,7 @@
 "name": "CF2242B",
 "problems": ["CF2242B"],
 "search": ["CF2242B"],
-"difficulty": 0,
+"difficulty": 1000,
 "time": "2026-07-07 07:52:56",
 "tags": []
 },
@@ -1899,7 +1899,7 @@
 "name": "CF2242C",
 "problems": ["CF2242C"],
 "search": ["CF2242C"],
-"difficulty": 0,
+"difficulty": 1300,
 "time": "2026-07-07 07:59:55",
 "tags": []
 },
@@ -1907,7 +1907,7 @@
 "name": "CF2242D",
 "problems": ["CF2242D"],
 "search": ["CF2242D"],
-"difficulty": 0,
+"difficulty": 1600,
 "time": "2026-07-07 08:08:54",
 "tags": []
 },
@@ -1915,7 +1915,7 @@
 "name": "CF2242F",
 "problems": ["CF2242F"],
 "search": ["CF2242F","平衡树"],
-"difficulty": 0,
+"difficulty": 2700,
 "time": "2026-07-07 09:02:57",
 "tags": ["平衡树"]
 },
@@ -2022,5 +2022,77 @@
 "difficulty": 3300,
 "time": "2026-07-08 15:32:45",
 "tags": ["构造","ad-hoc"]
+},
+{
+"name": "QOJ7752",
+"problems": ["QOJ7752"],
+"search": ["QOJ7752","点边容斥"],
+"difficulty": 1700,
+"time": "2026-07-09 15:25:14",
+"tags": ["点边容斥"]
+},
+{
+"name": "QOJ7751",
+"problems": ["QOJ7751"],
+"search": ["QOJ7751","构造"],
+"difficulty": 2800,
+"time": "2026-07-09 15:43:56",
+"tags": ["构造"]
+},
+{
+"name": "P13954",
+"problems": ["P13954","QOJ7736"],
+"search": ["P13954","QOJ7736","DP"],
+"difficulty": 2700,
+"time": "2026-07-10 14:40:47",
+"tags": ["DP"]
+},
+{
+"name": "UOJ1094",
+"problems": ["UOJ1094"],
+"search": ["UOJ1094"],
+"difficulty": 2400,
+"time": "2026-07-11 10:00:54",
+"tags": []
+},
+{
+"name": "UOJ1095",
+"problems": ["UOJ1095"],
+"search": ["UOJ1095","DP"],
+"difficulty": 3000,
+"time": "2026-07-13 09:56:48",
+"tags": ["DP"]
+},
+{
+"name": "UOJ1097",
+"problems": ["UOJ1097"],
+"search": ["UOJ1097","贪心","DP"],
+"difficulty": 2400,
+"time": "2026-07-13 10:06:36",
+"tags": ["贪心","DP"]
+},
+{
+"name": "AT_awtf2026algo_a",
+"problems": ["AT_awtf2026algo_a"],
+"search": ["AT_awtf2026algo_a","贪心","Kruscal重构树"],
+"difficulty": 2900,
+"time": "2026-07-09 11:24:21",
+"tags": ["贪心","Kruscal重构树"]
+},
+{
+"name": "AT_pakencamp_2024_day2_b",
+"problems": ["AT_pakencamp_2024_day2_b"],
+"search": ["AT_pakencamp_2024_day2_b","DP","换根DP"],
+"difficulty": 2800,
+"time": "2026-07-10 11:45:08",
+"tags": ["DP","换根DP"]
+},
+{
+"name": "UOJ1096",
+"problems": ["UOJ1096"],
+"search": ["UOJ1096","字符串","后缀数组"],
+"difficulty": 3100,
+"time": "2026-07-13 16:04:53",
+"tags": ["字符串","后缀数组"]
 }
 ]
