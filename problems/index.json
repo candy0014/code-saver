@@ -306,10 +306,10 @@
 {
 "name": "P10764",
 "problems": ["P10764"],
-"search": ["P10764","DP","双连通分量","圆方树"],
+"search": ["P10764","DP","连通分量","圆方树"],
 "difficulty": 2700,
 "time": "2026-04-08 09:31:04",
-"tags": ["DP","双连通分量","圆方树"]
+"tags": ["DP","连通分量","圆方树"]
 },
 {
 "name": "P14004",
@@ -1946,10 +1946,10 @@
 {
 "name": "ZR3490",
 "problems": ["ZR3490"],
-"search": ["ZR3490","exchange argument","哈希","倍增"],
+"search": ["ZR3490","exchange argument","Hash","倍增"],
 "difficulty": 2900,
 "time": "2026-06-30 14:37:00",
-"tags": ["exchange argument","哈希","倍增"]
+"tags": ["exchange argument","Hash","倍增"]
 },
 {
 "name": "ZR3491",
@@ -2094,5 +2094,165 @@
 "difficulty": 3100,
 "time": "2026-07-13 16:04:53",
 "tags": ["字符串","后缀数组"]
+},
+{
+"name": "P15940",
+"problems": ["P15940","QOJ17702"],
+"search": ["P15940","QOJ17702","数据结构","扫描线"],
+"difficulty": 2900,
+"time": "2026-07-15 15:40:40",
+"tags": ["数据结构","扫描线"]
+},
+{
+"name": "P6776",
+"problems": ["P6776","QOJ442"],
+"search": ["P6776","QOJ442","贪心","ad-hoc"],
+"difficulty": 2900,
+"time": "2026-07-15 19:57:55",
+"tags": ["贪心","ad-hoc"]
+},
+{
+"name": "P10101",
+"problems": ["P10101"],
+"search": ["P10101","组合"],
+"difficulty": 2300,
+"time": "2026-07-16 09:35:42",
+"tags": ["组合"]
+},
+{
+"name": "P8435",
+"problems": ["P8435"],
+"search": ["P8435","连通分量"],
+"difficulty": 1500,
+"time": "2026-07-19 21:57:54",
+"tags": ["连通分量"]
+},
+{
+"name": "P10546",
+"problems": ["P10546","QOJ8745"],
+"search": ["P10546","QOJ8745","交互","随机化","ad-hoc"],
+"difficulty": 3000,
+"time": "2026-08-05 19:44:17",
+"tags": ["交互","随机化","ad-hoc"]
+},
+{
+"name": "QOJ8332",
+"problems": ["QOJ8332"],
+"search": ["QOJ8332","贪心"],
+"difficulty": 2300,
+"time": "2026-08-03 14:58:59",
+"tags": ["贪心"]
+},
+{
+"name": "QOJ8331",
+"problems": ["QOJ8331"],
+"search": ["QOJ8331","剪枝"],
+"difficulty": 2300,
+"time": "2026-08-03 16:39:46",
+"tags": ["剪枝"]
+},
+{
+"name": "QOJ19010",
+"problems": ["QOJ19010"],
+"search": ["QOJ19010"],
+"difficulty": 900,
+"time": "2026-07-29 18:49:20",
+"tags": []
+},
+{
+"name": "QOJ19008",
+"problems": ["QOJ19008"],
+"search": ["QOJ19008","DP","状压DP"],
+"difficulty": 1900,
+"time": "2026-07-29 19:29:29",
+"tags": ["DP","状压DP"]
+},
+{
+"name": "QOJ19007",
+"problems": ["QOJ19007"],
+"search": ["QOJ19007","Hash"],
+"difficulty": 2100,
+"time": "2026-07-30 10:35:00",
+"tags": ["Hash"]
+},
+{
+"name": "QOJ9917",
+"problems": ["QOJ9917"],
+"search": ["QOJ9917"],
+"difficulty": 900,
+"time": "2026-07-31 18:47:36",
+"tags": []
+},
+{
+"name": "QOJ9925",
+"problems": ["QOJ9925"],
+"search": ["QOJ9925","贪心"],
+"difficulty": 1500,
+"time": "2026-07-31 18:56:07",
+"tags": ["贪心"]
+},
+{
+"name": "QOJ9920",
+"problems": ["QOJ9920"],
+"search": ["QOJ9920","势能分析"],
+"difficulty": 2500,
+"time": "2026-07-31 20:11:10",
+"tags": ["势能分析"]
+},
+{
+"name": "QOJ7857",
+"problems": ["QOJ7857"],
+"search": ["QOJ7857","贪心"],
+"difficulty": 2300,
+"time": "2026-08-02 15:56:15",
+"tags": ["贪心"]
+},
+{
+"name": "QOJ7864",
+"problems": ["QOJ7864"],
+"search": ["QOJ7864","DP"],
+"difficulty": 2300,
+"time": "2026-08-02 16:16:42",
+"tags": ["DP"]
+},
+{
+"name": "QOJ7861",
+"problems": ["QOJ7861"],
+"search": ["QOJ7861","贪心","单调栈"],
+"difficulty": 2600,
+"time": "2026-08-02 16:42:50",
+"tags": ["贪心","单调栈"]
+},
+{
+"name": "QOJ8328",
+"problems": ["QOJ8328"],
+"search": ["QOJ8328","分治"],
+"difficulty": 1600,
+"time": "2026-08-03 14:31:07",
+"tags": ["分治"]
+},
+{
+"name": "QOJ8334",
+"problems": ["QOJ8334"],
+"search": ["QOJ8334","Hash"],
+"difficulty": 1600,
+"time": "2026-08-03 14:42:24",
+"tags": ["Hash"]
+},
+{
+"name": "QOJ1817",
+"problems": ["QOJ1817","SOJ2063"],
+"search": ["QOJ1817","SOJ2063","分治"],
+"difficulty": 2800,
+"time": "2026-08-24 11:24:09",
+"tags": ["分治"]
+},
+{
+"name": "QOJ12212",
+"problems": ["QOJ12212"],
+"search": ["QOJ12212","二分","贪心"],
+"difficulty": 2400,
+"time": "2026-08-24 14:23:23",
+"tags": ["二分","贪心"]
 }
 ]

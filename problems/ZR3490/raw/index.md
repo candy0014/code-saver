@@ -3,7 +3,7 @@
 - **difficulty:** 2900
 - **tag:**
 	- exchange argument
-	- 哈希
+	- Hash
 	- 倍增
 
 ## Link
