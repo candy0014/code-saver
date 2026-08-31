@@ -9,6 +9,8 @@
 
 - **Link**
 	- [QOJ12212](https://qoj.ac/problem/12212)
+- **Hard**
+	- [QOJ970](https://qoj.ac/problem/970)
 - **Code**
 	- [code](?file=code0.cpp)
 
