@@ -2662,5 +2662,101 @@
 "difficulty": 3000,
 "time": "2026-08-31 13:59:48",
 "tags": ["博弈论","ad-hoc"]
+},
+{
+"name": "QOJ1854",
+"problems": ["QOJ1854"],
+"search": ["QOJ1854","构造","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-08-31 15:46:39",
+"tags": ["构造","ad-hoc"]
+},
+{
+"name": "QOJ4802",
+"problems": ["QOJ4802"],
+"search": ["QOJ4802","贪心","树状数组"],
+"difficulty": 2600,
+"time": "2026-08-31 20:22:03",
+"tags": ["贪心","树状数组"]
+},
+{
+"name": "QOJ8086",
+"problems": ["QOJ8086"],
+"search": ["QOJ8086","交互","ad-hoc"],
+"difficulty": 2800,
+"time": "2026-09-01 08:57:59",
+"tags": ["交互","ad-hoc"]
+},
+{
+"name": "QOJ1884",
+"problems": ["QOJ1884"],
+"search": ["QOJ1884"],
+"difficulty": 2800,
+"time": "2026-09-01 11:24:12",
+"tags": []
+},
+{
+"name": "QOJ8184",
+"problems": ["QOJ8184"],
+"search": ["QOJ8184","组合","拉格朗日插值"],
+"difficulty": 2500,
+"time": "2026-09-01 14:27:24",
+"tags": ["组合","拉格朗日插值"]
+},
+{
+"name": "QOJ4788",
+"problems": ["QOJ4788"],
+"search": ["QOJ4788","差分约束","最短路"],
+"difficulty": 2500,
+"time": "2026-09-01 15:47:26",
+"tags": ["差分约束","最短路"]
+},
+{
+"name": "QOJ4241",
+"problems": ["QOJ4241","SOJ1783"],
+"search": ["QOJ4241","SOJ1783","并查集","图论建模"],
+"difficulty": 2600,
+"time": "2026-01-10 10:52:56",
+"tags": ["并查集","图论建模"]
+},
+{
+"name": "QOJ10736",
+"problems": ["QOJ10736"],
+"search": ["QOJ10736"],
+"difficulty": 800,
+"time": "2026-09-01 18:55:15",
+"tags": []
+},
+{
+"name": "QOJ10744",
+"problems": ["QOJ10744"],
+"search": ["QOJ10744","构造"],
+"difficulty": 1200,
+"time": "2026-09-01 19:11:48",
+"tags": ["构造"]
+},
+{
+"name": "QOJ10746",
+"problems": ["QOJ10746"],
+"search": ["QOJ10746","网络流"],
+"difficulty": 2800,
+"time": "2026-09-01 20:07:24",
+"tags": ["网络流"]
+},
+{
+"name": "QOJ6545",
+"problems": ["QOJ6545"],
+"search": ["QOJ6545","构造"],
+"difficulty": 2900,
+"time": "2026-09-02 10:10:40",
+"tags": ["构造"]
+},
+{
+"name": "P9718",
+"problems": ["P9718","QOJ6300"],
+"search": ["P9718","QOJ6300","DP"],
+"difficulty": 1900,
+"time": "2026-09-02 14:45:47",
+"tags": ["DP"]
 }
 ]
