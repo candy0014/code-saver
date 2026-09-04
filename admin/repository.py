@@ -135,17 +135,34 @@ class Repository:
                     if url:
                         link_search_parts.append(url)
 
+            # Match code0.cpp's displayed submission time exactly:
+            # 1) explicit * submission; 2) newest submission whose name equals
+            #    the problem ID; 3) otherwise the oldest submission; 4) zero time.
+            subs = list(meta.get("submissions", []))
+            display_time = "0000-00-00 00:00:00"
+            primary = next((x for x in subs if x.get("primary")), None)
+            if primary is not None:
+                display_time = str(primary.get("time", "")) or display_time
+            elif subs:
+                ordered = sorted(subs, key=lambda x: str(x.get("time", "")), reverse=True)
+                same = next((x for x in ordered if str(x.get("name", "")) == p.name), None)
+                chosen = same if same is not None else ordered[-1]
+                display_time = str(chosen.get("time", "")) or display_time
+
             ans.append({
                 "id": p.name,
                 "title": meta.get("title") or p.name,
                 "custom_title": bool(meta.get("title")),
                 "difficulty": meta.get("difficulty", ""),
                 "tags": meta.get("tags", []),
-                "submission_count": len(meta.get("submissions", [])),
+                "submission_count": len(subs),
+                "time": display_time,
                 "link_targets": link_targets,
                 "link_search": " ".join(link_search_parts),
             })
+        # Stable two-pass sort: ties by ID ascending, primary key time descending.
         ans.sort(key=lambda x: x["id"].lower())
+        ans.sort(key=lambda x: x["time"], reverse=True)
         return ans
 
     def get_problem(self, problem_id: str):

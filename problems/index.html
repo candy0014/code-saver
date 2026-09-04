@@ -39,6 +39,33 @@ tr:hover { background: #1f2630; }
   color: white;
 }
 
+/* 已选择标签只有明确点击 × 才会删除，点标签本体不会取消。 */
+.selected-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+}
+
+.tag-remove {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0 2px;
+  margin: 0;
+  line-height: 1;
+  font-size: 15px;
+  cursor: pointer;
+  opacity: .72;
+}
+
+.tag-remove:hover {
+  opacity: 1;
+  background: rgba(255,255,255,.15);
+  border-radius: 3px;
+}
+
 .pagination { margin-top: 10px; }
 .jump { margin-top: 10px; }
 .filter { margin-top: 10px; }
@@ -81,6 +108,10 @@ tr:hover { background: #1f2630; }
 .tag-select:hover .tag-dropdown {
   display: block;
 }
+
+/* selected tag body is inert; only × removes it */
+.selected-tag{pointer-events:none;cursor:default}
+.selected-tag .tag-remove{pointer-events:auto;cursor:pointer}
 </style>
 </head>
 
@@ -204,8 +235,10 @@ let data = [];
 let currentPage = query.page;
 const pageSize = 20;
 
-let timeDesc = query.order !== "asc";
-let diffOrder = query.diffOrder;
+// 首页每次打开默认按“显示的提交时间”从近到远。
+// 用户在当前页面仍可点击表头临时切换排序。
+let timeDesc = true;
+let diffOrder = "none";
 
 let minDiff = query.minDiff ? parseInt(query.minDiff) : null;
 let maxDiff = query.maxDiff ? parseInt(query.maxDiff) : null;
@@ -217,11 +250,15 @@ let allTags = new Set();
 // ==========================
 // 标签
 // ==========================
-function toggleTag(tag) {
+function addTag(tag) {
+  if (!selectedTags.includes(tag)) selectedTags.push(tag);
+  currentPage = 1;
+  render();
+}
+
+function removeTag(tag) {
   const i = selectedTags.indexOf(tag);
   if (i >= 0) selectedTags.splice(i, 1);
-  else selectedTags.push(tag);
-
   currentPage = 1;
   render();
 }
@@ -233,7 +270,7 @@ function renderTagDropdown() {
     const span = document.createElement("span");
     span.className = "tag" + (selectedTags.includes(tag) ? " active" : "");
     span.textContent = tag;
-    span.onclick = () => toggleTag(tag);
+    span.onclick = () => addTag(tag);
     tagDropdown.appendChild(span);
   });
 }
@@ -246,9 +283,22 @@ function renderTagFilter() {
   tagFilter.append("当前标签筛选： ");
   selectedTags.forEach(tag => {
     const s = document.createElement("span");
-    s.className = "tag active";
-    s.textContent = tag;
-    s.onclick = () => toggleTag(tag);
+    s.className = "tag active selected-tag";
+
+    const label = document.createElement("span");
+    label.textContent = tag;
+    s.appendChild(label);
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "tag-remove";
+    remove.textContent = "×";
+    remove.title = `移除标签 ${tag}`;
+    remove.onclick = (e) => {
+      e.stopPropagation();
+      removeTag(tag);
+    };
+    s.appendChild(remove);
     tagFilter.appendChild(s);
   });
 }
@@ -341,7 +391,7 @@ function render() {
         const s=document.createElement("span");
         s.className="tag"+(selectedTags.includes(tag)?" active":"");
         s.textContent=tag;
-        s.onclick=()=>toggleTag(tag);
+        s.onclick=()=>addTag(tag);
         td3.appendChild(s);
       });
 

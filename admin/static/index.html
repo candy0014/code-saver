@@ -25,7 +25,7 @@
       <div class="problem-list" id="problemList"></div>
       <div class="side-footer">
         <button id="gitBtn">Git Diff</button>
-        <span>仅监听本机</span>
+        <span>仅监听本机 · build 2026.09.04.3</span>
       </div>
     </aside>
 
@@ -68,7 +68,7 @@
           <div class="card">
             <div class="card-title"><h2>基本信息</h2><span>对应 df / tag / from</span></div>
             <label class="field narrow"><span>难度</span><input id="difficulty" type="number" min="0" step="100" placeholder="例如 2800"></label>
-            <div class="field"><span>标签</span><div id="tags" class="chips"></div><div class="inline add-row"><input id="tagInput" placeholder="输入标签，回车添加"><button id="addTagBtn">添加</button></div></div>
+            <div class="field"><span>标签</span><div id="tags" class="chips"></div><div class="inline add-row tag-add-row"><div class="tag-input-wrap"><input id="tagInput" autocomplete="off" placeholder="输入标签，回车添加"><div id="tagSuggestions" class="tag-suggestions hidden"></div></div><button id="addTagBtn">添加</button></div></div>
             <div class="field"><div class="field-head"><span>来源</span><button class="tiny" id="addFromBtn">＋ 添加</button></div><div id="fromList" class="rows"></div></div>
           </div>
         </section>

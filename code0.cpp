@@ -282,6 +282,12 @@ int main(){
 		in.close(),out.close();
 		P.push_back(problem);
 	}
+	// 首页默认展示时间就是 subtime；生成 index.json 时也按同一字段倒序，
+	// 这样即使脱离前端 JS 查看数据，顺序也始终是最新提交在前。
+	stable_sort(P.begin(), P.end(), [](const Problem &a, const Problem &b){
+		if(a.subtime != b.subtime) return a.subtime > b.subtime;
+		return a.name < b.name;
+	});
 	out.open("./problems/index.json",ios::out|ios::trunc);
 	out<<"[\n";
 	for(int i=0;i<(int)P.size();i++){
