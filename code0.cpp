@@ -60,7 +60,7 @@ struct Problem{
 		string name,link;
 		Sub(){for(int i=0;i<6;i++)tim[i]=0;name=link="";}
 	};
-	string name;
+	string name,title;
 	vector<Link>link;
 	int difficulty;
 	vector<pair<string,string>> from;
@@ -71,7 +71,7 @@ struct Problem{
 		link.clear(),tag.clear();
 		difficulty=0;
 		from.clear();
-		name="";
+		name=title="";
 		sub.clear();
 		subtime={0,0,0,0,0,0};
 	}
@@ -90,6 +90,9 @@ struct Problem{
 				link.back().insert(s1,s2);
 			}
 		}
+	}
+	void update_title(vector<string>p){
+		if(p.size()) title=p[0];
 	}
 	void update_difficulty(vector<string>p){
 		if(p.size()){
@@ -141,6 +144,7 @@ struct Problem{
 		}
 	}
 	void work(string op,vector<string>p){
+		if(op=="title"){update_title(p);return;}
 		if(op=="link"){update_link(p);return;}
 		if(op=="df"){update_difficulty(p);return;}
 		if(op=="from"){update_from(p);return;}
@@ -187,7 +191,8 @@ struct Problem{
 	}
 	void print2(){
 		out<<"{\n";
-		out<<"\"name\": "<<"\""<<name<<"\""<<",\n";
+		out<<"\"id\": "<<"\""<<name<<"\""<<",\n";
+		out<<"\"name\": "<<"\""<<(title.empty()?name:title)<<"\""<<",\n";
 		out<<"\"problems\": [";
 		int flag=0;
 		for(auto x:link){
@@ -202,6 +207,8 @@ struct Problem{
 		out<<"],\n";
 		out<<"\"search\": [";
 		flag=0;
+		if(!title.empty()){out<<"\""<<title<<"\"";flag=1;}
+		if(flag) out<<","; out<<"\""<<name<<"\""; flag=1;
 		for(auto x:link){
 			if(x.name=="Code"||x.name=="Solution") continue;
 			for(auto y:x.p){

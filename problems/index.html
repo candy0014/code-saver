@@ -320,7 +320,7 @@ function render() {
 
       const td = document.createElement("td");
       const a = document.createElement("a");
-      a.href = base + "problems/" + item.name + "/";
+      a.href = base + "problems/" + (item.id || item.name) + "/";
       a.textContent = item.name;
       td.appendChild(a);
 
@@ -329,7 +329,7 @@ function render() {
         sub.style.fontSize = "12px";
         sub.style.opacity = "0.7";
         sub.style.whiteSpace = "nowrap";
-        sub.textContent = item.problems.join(" ");
+        sub.textContent = [item.id && item.id !== item.name ? item.id : "", ...item.problems].filter(Boolean).join(" ");
         td.appendChild(sub);
       }
 

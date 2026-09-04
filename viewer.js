@@ -52,11 +52,31 @@ function renderMath(el) {
   });
 }
 
+
+// ==========================
+// Optional problem title from problem.conf
+// ==========================
+async function loadProblemTitle(basePath, file) {
+  try {
+    const r = await fetch(basePath + "/raw/problem.conf", { cache: "no-store" });
+    if (!r.ok) return;
+    const conf = await r.text();
+    const m = conf.match(/^>title\s*$([\s\S]*?)^<title\s*$/m);
+    if (!m) return;
+    const title = m[1].split(/\r?\n/).map(x => x.trim()).find(Boolean);
+    if (!title) return;
+    const titleEl = document.getElementById("page-title");
+    if (titleEl) titleEl.textContent = file === "index.md" ? title : `${title} · ${file}`;
+    document.title = file === "index.md" ? title : `${title} · ${file}`;
+  } catch (_) {}
+}
+
 // ==========================
 // main
 // ==========================
 async function load() {
   const { basePath, file } = getParams();
+  loadProblemTitle(basePath, file);
   const ext = getExt(file);
 
   const contentEl = document.getElementById("content");

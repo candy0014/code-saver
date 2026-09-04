@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Saver Admin</title>
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CS</div>
+        <div><strong>Code Saver</strong><span>Admin</span></div>
+      </div>
+      <div class="side-actions">
+        <button class="primary" id="newProblemBtn">＋ 新建题目</button>
+        <button id="rebuildBtn">↻ 重新生成</button>
+      </div>
+      <label class="search-wrap">
+        <span>⌕</span><input id="search" placeholder="搜索 ID / 名称 / 标签">
+      </label>
+      <div class="problem-count" id="problemCount">加载中…</div>
+      <div class="problem-list" id="problemList"></div>
+      <div class="side-footer">
+        <button id="gitBtn">Git Diff</button>
+        <span>仅监听本机</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div id="emptyState" class="empty-state">
+        <div class="empty-glyph">⌘</div>
+        <h1>题库驾驶舱</h1>
+        <p>从左边选择一道题，或者新建一道题。</p>
+      </div>
+
+      <div id="editor" class="editor hidden">
+        <header class="editor-header">
+          <div>
+            <div class="eyebrow">PROBLEM</div>
+            <h1 id="problemHeading"></h1>
+            <div class="subheading" id="problemSubheading"></div>
+          </div>
+          <div class="header-actions">
+            <a id="previewLink" class="button-link" target="_blank">打开题目页 ↗</a>
+            <button id="saveBtn" class="primary">保存</button>
+          </div>
+        </header>
+
+        <nav class="tabs" id="tabs">
+          <button data-tab="basic" class="active">基本</button>
+          <button data-tab="links">链接</button>
+          <button data-tab="subs">Submission</button>
+          <button data-tab="files">文件</button>
+          <button data-tab="conf">problem.conf</button>
+        </nav>
+
+        <section class="tab-panel active" data-panel="basic">
+          <div class="card">
+            <div class="card-title"><h2>题目标识</h2><span>目录名与展示名可以分开</span></div>
+            <div class="grid two">
+              <label class="field"><span>题目 ID / 目录名</span><div class="inline"><input id="problemId" disabled><button id="renameBtn">重命名</button></div></label>
+              <label class="field"><span>展示名称（可选）</span><input id="title" placeholder="留空时显示目录名"></label>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title"><h2>基本信息</h2><span>对应 df / tag / from</span></div>
+            <label class="field narrow"><span>难度</span><input id="difficulty" type="number" min="0" step="100" placeholder="例如 2800"></label>
+            <div class="field"><span>标签</span><div id="tags" class="chips"></div><div class="inline add-row"><input id="tagInput" placeholder="输入标签，回车添加"><button id="addTagBtn">添加</button></div></div>
+            <div class="field"><div class="field-head"><span>来源</span><button class="tiny" id="addFromBtn">＋ 添加</button></div><div id="fromList" class="rows"></div></div>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-panel="links">
+          <div class="card">
+            <div class="card-title"><h2>链接分组</h2><button id="addGroupBtn">＋ 新建分组</button></div>
+            <p class="hint">支持 #Link、#Code、#Solution、#Same、#Easy、#Hard，以及任意自定义分组。</p>
+            <div id="linkGroups" class="group-list"></div>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-panel="subs">
+          <div class="card">
+            <div class="card-title"><h2>Submission</h2><button id="addSubBtn">＋ 添加记录</button></div>
+            <p class="hint">“主记录”对应 problem.conf 时间前的 <code>*</code>，最多一个。</p>
+            <div id="subList" class="sub-list"></div>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-panel="files">
+          <div class="files-layout">
+            <div class="card file-browser">
+              <div class="card-title"><h2>raw/</h2><button id="newFileBtn">＋ 新建</button></div>
+              <div id="fileList"></div>
+            </div>
+            <div class="card file-editor-card">
+              <div class="file-editor-head">
+                <div><strong id="fileName">选择文件</strong><span id="fileMeta"></span></div>
+                <div><button id="deleteFileBtn" class="danger hidden">删除</button><button id="saveFileBtn" class="primary hidden">保存文件</button></div>
+              </div>
+              <textarea id="fileEditor" class="code-editor" disabled spellcheck="false" placeholder="选择一个文本文件开始编辑"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-panel="conf">
+          <div class="card raw-card">
+            <div class="card-title"><div><h2>Raw problem.conf</h2><span>可直接编辑任何字段，未知 section 会原样保留</span></div><button id="saveConfBtn" class="primary">保存 Raw</button></div>
+            <textarea id="rawConf" class="code-editor conf-editor" spellcheck="false"></textarea>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="modal"><form method="dialog" id="modalForm"><div id="modalBody"></div><div class="modal-actions"><button value="cancel">取消</button><button id="modalOk" value="default" class="primary">确定</button></div></form></dialog>
+  <dialog id="gitModal" class="wide-dialog"><div class="dialog-head"><h2>Git Diff</h2><button onclick="gitModal.close()">×</button></div><pre id="gitOutput"></pre><div class="commit-row"><input id="commitMessage" placeholder="Commit message，例如 problem: update QOJ17186"><button id="commitBtn" class="primary">Commit</button></div></dialog>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>
